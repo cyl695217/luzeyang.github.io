@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2Flzy%2F2019%2F03%2F03%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[SuSSR_Magisk模块说明（需root）]]></title>
     <url>%2Flzy%2F2019%2F02%2F23%2FSuSSR_Magisk%E6%A8%A1%E5%9D%97%E8%AF%B4%E6%98%8E%2F</url>
     <content type="text"><![CDATA[随着SuperSU的渐渐没落，Magisk成为了新秀，它能够实现不修改/system但实现修改的效果，而且可以对系统隐藏root，实现OTA升级。 Github更新：https://github.com/topjohnwu/Magisk/releases XDA官方帖：http://forum.xda-developers.com/apps/magisk/mod-magisk-v1-universal-systemless-t3432382) 步入正题，Magisk默认关闭核心功能模式， 所以我们将SuSSR复制到system/xbin后，不重启手机时可以使用，一但重启手机，system分区被还原，我们复制进去的文件也被删除，而我又不想打开核心功能模式，因为一旦打开，其它已经安装的模块将不会被载入，system分区被修改（包括添加，删除分区内文件或软件）后，OTA就无法完成。 我也是受此问题困扰，虽然我不经常用SuSSR，但我还是想把它放进去，以备不时之需，就索性将它制作成了Magisk模块，有需要的可以下载：点我下载 提取码:rw76 安装 1：打开Magisk，点击模块 2：点击下面的加号 3：选择你刚才下载的压缩包，确定刷入 4：选择重启，之后就可以看到成功刷入啦！ SuSSR的具体配置还是需要自己进入system/xbin/sussr内编辑，重启后配置依然生效。]]></content>
@@ -98,5 +93,10 @@
       <categories>
         <category>Markdown</category>
       </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2Flzy%2F2018%2F06%2F28%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to my secret space]]></content>
   </entry>
 </search>
