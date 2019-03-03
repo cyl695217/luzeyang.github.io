@@ -5,4 +5,98 @@
     <url>%2Flzy%2F2019%2F03%2F03%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
+  <entry>
+    <title><![CDATA[SuSSR_Magisk模块说明（需root）]]></title>
+    <url>%2Flzy%2F2019%2F02%2F23%2FSuSSR_Magisk%E6%A8%A1%E5%9D%97%E8%AF%B4%E6%98%8E%2F</url>
+    <content type="text"><![CDATA[随着SuperSU的渐渐没落，Magisk成为了新秀，它能够实现不修改/system但实现修改的效果，而且可以对系统隐藏root，实现OTA升级。 Github更新：https://github.com/topjohnwu/Magisk/releases XDA官方帖：http://forum.xda-developers.com/apps/magisk/mod-magisk-v1-universal-systemless-t3432382) 步入正题，Magisk默认关闭核心功能模式， 所以我们将SuSSR复制到system/xbin后，不重启手机时可以使用，一但重启手机，system分区被还原，我们复制进去的文件也被删除，而我又不想打开核心功能模式，因为一旦打开，其它已经安装的模块将不会被载入，system分区被修改（包括添加，删除分区内文件或软件）后，OTA就无法完成。 我也是受此问题困扰，虽然我不经常用SuSSR，但我还是想把它放进去，以备不时之需，就索性将它制作成了Magisk模块，有需要的可以下载：点我下载 提取码:rw76 安装 1：打开Magisk，点击模块 2：点击下面的加号 3：选择你刚才下载的压缩包，确定刷入 4：选择重启，之后就可以看到成功刷入啦！ SuSSR的具体配置还是需要自己进入system/xbin/sussr内编辑，重启后配置依然生效。]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>sussr</tag>
+        <tag>免流</tag>
+        <tag>Magisk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SuSSR v5.7使用说明（需root）]]></title>
+    <url>%2Flzy%2F2019%2F02%2F02%2Fsussr%E8%84%9A%E6%9C%AC%E8%AF%B4%E6%98%8E%2F</url>
+    <content type="text"><![CDATA[序：SuSSR脚本版本功能强大，能控制每个程序的数据走向。属于本世纪最难用最难调教的脚本之一。因此，想完全发挥脚本版的优势，请熟读本说明！ 本说明按照setting.ini的顺序说明，每个项都必定能在此找到对应的说明。★开头的是setting.ini中的变量名称，下面的是其说明（简单的说明可能会写入同一行）。 SSR服务器 ★vpsconf #解析：使用配置文件。配置文件放置在VPS文件夹内，生成方法请看VPS文件夹内的说明文件。支持ssr://链接的转换！注意，这里一旦填入内容，setting.ini中填入的部分内容会被覆盖，例如SSR服务器的大部分设置。这里使用到的原理是先载入setting.ini的配置，然后再载入vpsconf中指定文件的配置。故同名的参数会被覆盖。 ★ip 服务器IP地址（支持域名）★port 服务器端口★password SSR密码★method SSR加密方式★protocol SSR协议★protocol_param SSR协议参数★obfs SSR混淆方式★host SSR混淆参数 ★dns #解析：DNS地址，多个地址可以用空格区分。如开启视频破版权，本dns不需设置（脚本会用内置dns替换）。国外vps用户可以替换DNS为8.8.8.8。注意，如果dns设置为0，则启动空中卡优化模式，具体效果为：DNS采用本地联通DNS直接解析，不启动pdnsd解析DNS。同时建议你关闭破版权选项（反正用联通DNS肯定没有破版权效果）。 广告过滤设置 SuSSR 5.0全新引入了广告过滤功能。依靠KoolProxy去广告插件进行广告过滤（此插件一般用在路由器上，SuSSR成功把它运行到android上）。KoolProxy项目主页：http://firmware.koolshare.cn/binary/KoolProxy/经测试，对各大视频APP有着极其明显的去广告效果（片头60秒广告），对网页广告有一定效果（规则对手机版网页支持不太好），对app的内嵌广告、启动页广告能作用效果不大（据说规则不好写）。 ★dataadb #解析：数据网络进行广告过滤(0=关闭,1=打开)。在数据网络下，进行广告过滤。 ★wifiadb #解析：WiFi网络进行广告过滤(0=关闭,1=打开)。在WiFi网络下，进行广告过滤。 ★wifinoadb #解析：WiFi放行白名单。当手机连接WiFi后，获得设置中的ip地址时，不进行广告过滤。适用场景为：你有一个很牛B的自带去广告的WiFi，而同时使用多个去广告插件怕造成冲突。解决方案为，在路由或者手机中，固定你自己的IP地址（如192.168.123.88），然后在这里填写wifinoadb=’192.168.123.88’。那么当手机获得这个IP地址时，所有连接都不进行广告过滤。支持填写多个IP地址（空格区分），也可以填写IP段，如192.168.123.1/24 ★bjglms #解析：本机过滤模式(0=全局，1=仅指定应用)。默认是全局，即所有本机的程序都进行广告过滤（下面一个参数可以定义不过滤的应用）。若改成1，则仅指定应用才进行广告过滤（在下面一个参数设置）。 ★adlwuid #解析：例外UID。若上一个参数（本机过滤模式）是全局模式，则这里的应用不进行过滤。若上一个参数是仅指定应用，则仅过滤这里指定的应用。多个UID之间用空格分开。 ★hotadb #解析：热点过滤(0=关闭,1=打开)。本机开的热点，是否进行广告过滤。 ★autoupdate #解析：自动更新KoolProxy的去广告规则(0=关闭,1=打开)。自动更新在开启脚本时触发（并不是真的每隔多少个小时就自动更新，因为我的脚本没有后台运行，所以不能具备这类功能），触发的间隔是6小时。即如果检测到上次更新时间距离现在超过6个小时，就会自动更新。自动更新会在开启脚本30秒后进行。 ==== 广告过滤规则更新内置一个脚本文件 update-rules.sh ，运行可以更新KoolProxy的规则文件。注意，如果不使用广告过滤功能的，就不要运行这个文件了，否则KoolProxy可能会空运行。由于需要网上下载文件，而且KP的规则服务器貌似连接速度不快。所以脚本可能运行比较久，请耐心等待。最长等待时间应该在25秒左右，我设置了wget的超时时间10秒，需要下载2个文件。 联网禁网设置 本类设置中，如果需要设置多个UID，请使用 空格 分开。例如TCP放行UID 1000和1234，则填写tfx=”1000 1234”此类设置与下面的“UDP转发设置”的关系，请参见本文下方的《“联网禁网设置”与“UDP转发设置”的关系》。 ★bjudp #解析：本机UDP放行开关(0=禁网，1=放行)。属于全局开关，一旦禁用，本机所有程序的udp都不能联网。 ★gxudp #解析：共享UDP放行开关(0=禁网，1=放行)。属于全局开关，一旦禁用，热点产生的udp都不能联网。 ★tfx #解析：TCP放行。可填入需要放行TCP程序的UID。这些程序，其TCP数据不经过SSR处理，直接联网。 ★ufx #解析：UDP放行。可填入需要放行UDP程序的UID。这些程序的UDP数据能直接联网（无视bjudp的全局开关） ★ujw #解析：UDP禁网。可填入需要禁网UDP程序的UID。这些程序的UDP数据直接被禁网（无视bjudp的全局开关） UDP转发设置 注意：此处设置不代表禁网！具体参考下面的《“联网禁网设置”与“UDP转发设置”的关系》。 ★dludp #解析：UDP代理方式(0=直连，1=通过UDP转发，2=通过TCP转发)0 = 用本地4G直接发送UDP。1 = 直接转发UDP到服务器，推荐空中卡及移动137/8端口使用。部分host免流地区使用这个也能达到半免UDP的效果，具体自测。2 = 通过TCP转发UDP数据。能ssr免流的用这个必定能免。但服务器必须安装gost程序 ★udpdlgz #解析：UDP代理规则（0=全局代理，1=局部代理）注意：UDP代理方式★dludp=1或者2时才有效！0 = 本机所有UDP默认都经过SSR代理转发，被“UDP代理例外程序★udplwuid”设置的程序则不会经过。1 = 本机所有UDP默认都不经过SSR代理转发，被“UDP代理例外程序★udplwuid”设置的程序则会被代理。 ★udplwuid解析：UDP代理规则例外程序，填入UID。配合上一条使用。多UID用 空格 分开 gost服务器设置 注意：仅“UDP代理方式”为“通过TCP转发”（★dludp=2）才需要gost服务器 ★gostip #解析：gost服务器地址。默认留空，等同于使用SSR服务器地址。 ★gostpwd #解析：服务器的gost密码。 ★udpport #解析：服务器udp端口当“UDP代理方式”=1时，此选项代表服务器的对外UDP端口。正常SSR服务器的TCP和UDP是同端口，樱花等特殊服务器才需要设置此项。当“UDP代理方式”=2时，此选项代表服务器的gost服务对应的外部端口。正常服务器默认开6688端口，樱花等特殊服务器需要设置此项。注意：如果你的服务器是正常服务器，请留空此项，程序会自动完成。 高级设置 ★pbq #解析：破视频版权(0=关闭，不为0则开启)本质是采用旧版本的ss-redir，能过视频版权问题。开启后会自动设置dns。内置3个DNS，分别用序号1.2.3表示。可以多选，如12代表启用1和2号dns。采用多个dns会加重ssr程序的负担，一般来说只需开启一个就OK了。注意：除非有必要，否则不要开启破版权功能 ★dqhost #解析：让pdnsd读取系统host文件(0=关闭，1=开启)。但由于新版ss-redir采用远端解析IP的方式，可能效果不大。但对于开启视频破版权的用户，还是有效果的。 ★ymzh #解析：域名转换(0=关闭，1=开启)自动将域名转换为IP地址再运行相关脚本，脚本启动速度可能降低，但可以防止某些奇怪的问题。 ★qjdl #解析：WiFi代理(0=关闭，1=开启)开启后，即使连接WiFi，也数据也通过SSR联网。一般用于WiFi下翻墙。 ★cqwl #解析：开关网络(0=不执行，1=执行)脚本执行完毕后开关一次网络，让app刷新网络。建议开启，空中卡等需要调内网的机器可选择关闭。 ★cxfx #解析：彩信放行，0=不放行，1=移动联通，2=电信顾名思义，打开后，开着SSR也能收发彩信了。本质是放行10.0.0.172的所有连接。一般SSR不会动用这个ip。 ★bdzfms #解析：本地转发模式，1=REDIRECT模式，2=DNAT模式，默认1属于外行人难以理解的项目。如果开启脚本后，流量仍然不经过SSR，可尝试修改为2. ★gxzfms #解析：共享转发模式，1=REDIRECT模式，2=DNAT模式，默认1也属于外行人难以理解的项目。如果开启热点，别人的流量不经过SSR，可尝试修改为2. ★gxwgip #解析：共享转发模式=2时，DNAT目标地址，即开热点后网关IP。绝大部分机器都是”192.168.43.1” =================================== “联网禁网设置”与“UDP转发设置”的关系说形象点，一个数据包要出去，就和人要走出去一样。 “UDP转发设置”中，设置的是交通工具。是步行、单车还是汽车。 “联网禁网设置”好比是路，联网就是路通了，禁网就此路不通。路不通，你再好的交通工具也拉倒。 明白了这个比喻，相信你就会进行相关的设置了。 ======== 配置举例例子A： 腾讯王用户，某麻花藤的吸血游戏UID=4444，对这个游戏完全放行。其余程序全局UDP转TCP发送。部分配置：bjudp=1 #全局放行UDPtfx=”4444” #TCP放行吸血游戏，不经过SSR(ufx=”4444”) #因为UDP是全局放行，所以这个设置不设置都没关系dludp=2 #UDP转TCP发送udpdlgz=0 #UDP全局转发给SSRudplwuid=”4444” #吸血游戏的UDP不需要过SSR 例子B：腾讯王用户，某麻花藤的吸血游戏UID=4444，对这个游戏完全放行。其余程序全局UDP禁网。部分配置：bjudp=0 #全局禁网UDPtfx=”4444” #TCP放行吸血游戏，不经过SSRufx=”4444” #UDP放行吸血游戏dludp=0 #因为UDP禁网，所以为了世jie界yue和zi平yuan，UDP就不用转发了。 例子C：某奇葩用户，XX视频采用UDP联网，UID=5555，仅对此视频UDP转TCP免流，其余UDP直接放行。部分配置：bjudp=1 #全局放行UDPdludp=2 #UDP转TCP发送udpdlgz=1 #UDP局部代理udplwuid=”5555” #UDP局部代理的程序是XX视频 例子D：某奇葩用户的弟弟，XX视频采用UDP联网，UID=5555，仅对此视频UDP转TCP免流，其余UDP禁网！部分配置：bjudp=0 #全局禁网UDPufx=”5555” #UDP放行XX视频dludp=2 #UDP转TCP发送udpdlgz=1 #UDP局部代理udplwuid=”5555” #UDP局部代理的程序是XX视频 ====== 瘦身教程若不需要SuSSR的某些功能，可以删除文件，以节省手机内存（非运存）。若不需要去广告功能，删除tools下的KoolProxy文件夹。（约1M）若不需要UDP转TCP功能（UDP代理方式=2），删除tools下的UDPoverTCP文件夹。（约9M）个人建议，如果不是手机内存特别紧张，不需要删除这些文件。 下载链接：sussr-5.7-64位通用版.zip(4.6MB) 提取码:q18vsussr-5.7-32位通用版.zip(4.6MB) 提取码:n305 此说明比较复杂，可多多研读，有不明白之处，可联系我。]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>sussr</tag>
+        <tag>免流</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SSR开热点]]></title>
+    <url>%2Flzy%2F2019%2F02%2F01%2FSSR%E5%BC%80%E7%83%AD%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[首先你要明白SSR它只会代理你手机系统或预装APP产生的数据流量，所以你运不运行SSR开热点热点流量都走的你实际的流量，所以，如果开热点想免，那么连接该手机热点的手机或者电脑都需要打开SSR，这样才不会消耗你手机的流量。 下一节我介绍一下脚本版SSR：sussr，比SSR功能很强大且开出的热点本身就是代理过的，连接者无需任何操作即可翻可免。]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>SSR</tag>
+        <tag>热点</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[联通电信SSR混淆、高级混淆]]></title>
+    <url>%2Flzy%2F2018%2F12%2F28%2F%E6%B7%B7%E6%B7%86%E5%8F%82%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[一：各类混淆联通卡通用混淆参数腾讯大王卡（虎牙）端口任意 tx.flv.huya.com 腾讯大王卡（微信）端口80 short.weixin.qq.com 腾讯大王卡（微信）端口80 szextshort.weixin.qq.com 沃阅读混淆参数:partner.iread.wo.com.cn 沃商店混淆参数1:game.hxll.wostore.cn 沃商店混淆参数2:music.hxll.wostore.cn 沃阅读高级混淆参数:partner.iread.wo.com.cn#Connection: Keep-AliveAccept-Encoding: gzip 沃商店高级混淆参数1:game.hxll.wostore.cn#Connection: Keep-AliveAccept-Encoding: gzip 沃商店高级混淆参数2:music.hxll.wostore.cn#Connection: Keep-AliveAccept-Encoding: gzip (吉林辽宁北京河北河南甘肃新疆陕西山西山东安徽江苏浙江福建江西广西贵州云南湖南上海深圳已免) (联通用户不管用的什么套餐都可以优先测试以上混淆参数，因为这些混淆参数超过40G也可以免流) 普通免流混淆参数 QQ音乐混淆参数:dl.stream.qqmusic.com 梦想e卡混淆参数1:imhdfs.icbc.com.cn 梦想e卡混淆参数2(福建已免):v.icbc.com.cn 爱奇 艺混淆参数:baiducdncnc.inter.iqiyi.com 优酷混淆参数:vali-dns.cp31.ott.cibntv.net 高德地图混淆参数:mps.amap.com 央视影音混淆参数:asp.cntv.myalicdn.com 百度贴吧混淆参数:static.tieba.baidu.com 微信混淆参数(遵义广州已免):short.weixin.qq.com 虾米音乐混淆参数:pic.xiami.net 天翼视讯混淆参数:vod3.nty.tv189.cn 钉钉混淆参数:tms.dingtalk.com 高级免流混淆参数 优酷高级混淆参数:vali-dns.cp31.ott.cibntv.net#Range:bytes=25165824-32586598Accept: / 电信爱看高级混淆参数:ltevod.tv189.cn#Connection: Keep-AliveAccept-Encoding: gzip 沃音乐高级混淆参数:woif.10155.com#Accept-Encoding: gzip 微信高级混淆参数(深圳已免):szminorshort.weixin.qq.com#Upgrade: mmtlsAccept: /Connection: closeContent-Length: 533Content-Type: application/octet-stream 淘宝高级混淆参数:adashbc.m.taobao.com#Accept-Encoding: gzip 央视影音高级混淆参数:asp.cntv.myalicdn.com#Icy-MetaData: 1 抖音高级混淆参数:dm.toutiao.com#Connection: Keep-AliveAccept-Encoding: gzip 百度贴吧高级混淆参数:tbcdn.hiphotos.baidu.com#needginfo: 1/nConnection: Keep-Alive/nUser-Agent: bdtb for Android 9.0.8.0 爱奇艺高级混淆参数:data.video.qiyi.com#Accept: / 美团高级混淆参数:apimeishi.meituan.com#Connection: Keep-Alive 高德地图高级混淆参数:mps.amap.com#Connection: Keep-AliveAccept-Encoding: gzipContent-Length: 680 二：使用方法 推荐使用高级混淆参数 混淆是免流的必要条件，其端口我都已配置好，各地区和卡类型可自行选择混淆参数。还是那句话，免不免都是靠自行测试，具体方法请查看给出的方法。 大部分地区推荐沃商店高级混淆，这个最容易免，如果这个不免再测试其它混淆，使用方法如下 确定自己的卡类型，比如我是联通卡，因为联通卡浏览沃商店等自家的应用并不花费流量，所以我选择沃商店高级混淆参数1:game.hxll.wostore.cn#Connection: Keep-Alive，这个混淆参数，然后将game.hxll.wostore.cn#Connection: Keep-Alive复制粘贴到我分享的节点混淆参数那一栏，(注意不要填到协议参数里面咯)。 或者我是联通大王卡，什么QQ微信啦都可以免流，那么就可以选择腾讯大王卡（微信）端口80 szextshort.weixin.qq.com这个混淆参数，就将szextshort.weixin.qq.com复制到混淆参数 或者我领到了15G优酷流量，想把它用完，就可以选择优酷混淆参数:vali-dns.cp31.ott.cibntv.net这个混淆参数，就把vali-dns.cp31.ott.cibntv.net粘贴到混淆参数，那么打开代理就会将所有代理的流量都计算到优酷专用流量里面。 以上混淆参数都是整理所得，是否有效都取决于运营商是否将host列入流量白名单，有些混淆参数可能随时失效，这都是在使用过程中需要注意的。]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>SSR</tag>
+        <tag>混淆</tag>
+        <tag>混淆参数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于免流]]></title>
+    <url>%2Flzy%2F2018%2F12%2F24%2F%E5%85%B3%E4%BA%8E%E5%85%8D%E6%B5%81%2F</url>
+    <content type="text"><![CDATA[为了方便理解，我用比较通俗的语言来描述关于ssrr免流的问题 什么是免流免流就是免花费你的手机流量，在运营商规定的服务网站或者APP消费的流量都不记入你的流量总额，就像你用大王卡，那么微信QQ等应用花费的流量都记入免费流量，又或者说是联通卡，通过联通移动网络登入手机营业厅，沃商店等他们自己公司的APP，也是不会花费流量的，就像你发短信到10010或者10086一样，不会扣你话费。 免流原理运营商是通过什么来判断你是浏览的自家网站或者APP的呢？最主要的就是Host和端口，SSR免流的原理是通过服务器转发数据包，去掉真实Host，自定义特定Host（即混淆参数，了解混淆参数），当这个特定的Host恰好是运营商的白名单Host、端口又复合时（移动、联通一般是80，电信随意，移动基本上关闭了上网白名单，很难实现免流了）时，就达到上网不扣费的目的了。 流量那些事为了防止用户的为所欲为，无奸不商的各大运营商基本上都会给用户设置流量上限，最常见的就是40G后限速，比如我的39元冰淇淋特坑套餐就是上限15G，超过15G后限速1Mbps，这里顺便说一下带宽和实际上行下载速度的关系，带宽除以8就是实际的网速，比如1Mbps的下载速度128kb/s。当你运营商带宽大于云服务器的带宽时，只能跑满云服务器的带宽，当你运营商的带宽小于云服务器的带宽时，只能跑满运营商的带宽。 现在大部分的手机网速显示是没有过滤VPN流量的，所以基本上都会显示双倍网速，具体网速在下拉通知栏中ssr通知条内。 还有就是手机流量和云服务器流量的关系，你手机流量总额是你自己的，云服务器也有它自己的流量，正常情况下(只考虑单向倍率)，你连接到ssr时，你手机花费1M或者1G流量，对应的云服务器也会花费1M或者1G流量。免流情况下，只花费服务器流量，而不会花费你手机流量。]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>SSR</tag>
+        <tag>免流</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SSR客户端说明]]></title>
+    <url>%2Flzy%2F2018%2F12%2F01%2FSSR%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AF%B4%E6%98%8E%2F</url>
+    <content type="text"><![CDATA[SSR是一款非常优秀的代理软件，首先你要明白它的工作原理。在正常情况下，我们手机数据（流量）传输都是直接与基站（服务器）相连的，为了网络环境的健康，我们国家建立了防火墙，也就是说在我们国内只能访问国内的网络。所以有些无法连接网站会显示404，当我们出于某种需求需要连接外网时就需要一些代理软件来实现了。 SSR的功能通俗来讲就是将你产生的数据流量经过代理，伪装成你vps所在地的ip来进行上网，由于其它国家地区基本上都没有墙，所以当你使用代理时仍可正常访问国内的网络，只是会受到网络延迟的影响。 下面介绍一下SSR的一些比较关键的功能选项。 一：服务器设置 1：群组名和配置名称。随意，主要是用来区分是哪个节点。 2：服务器～混淆参数。这几个选项都是当你在vps上安装ShadowsocksR所选择的，协议参数和混淆参数默认不填写，如果你仅仅翻墙，那么远程端口，加密方法，协议，混淆方式都可以随机选择。如果你还想免流，那这几个选项会有特定的要求，混淆参数也为必填写项，各运营商混淆参数整合。 二：功能设置 1：路由。默认全局，手机端一般选择这个即可，我挂在路由器上时一般会选择仅代理中国大陆无法访问的地址。 2：ipv6路由。默认关闭，ipv6地址可用时可用，暂不用打开。 3：分应用代理。默认关闭。这个功能比较常用，可以打开，打开后会列出你手机上所有的应用，绕行模式默认关闭，当你选中一个应用时，打开SSR并运行，只要这个被选中的应用运行，这个代理才会生效。比如，我微信经常打开，不需要翻墙就可以正常使用，而且我还喜欢看youtube，但是youtube需要翻墙才能使用，而我又不想每次打开youtube之前都打开SSR，这个时候就可以在分应用代理那里把youtube打开而不选择微信，这样微信的流量就不会经过SSR代理，也就是SSR在后台也不会运行，只有当你打开youtube时产生的流量才经过SSR代理，这样就算微信youtube同时打开也不会影响微信的信息延迟和youtube的观看。 4：udp转发。默认关闭，可不开启，有些ShadowsocksR支持udp转发但是SSR客户端貌似还不能做到，打开会导致无网络。 5：请求忽略电池优化。默认关闭，对于小米MIUI，华为EMUI等高度定制系统，如果长时间不自行清理后台它可能会自动清理后台，这种情况在熄屏情况下容易出现，比如你经常挂着SSR下载大文件，一下就要下载三四十分钟而又把手机放在一边时可以打开这个选项，以免杀后台导致下载失败。 其它选项基本上都可以按照它的默认值就可以了。 三：下载链接 1：Android： ①SSR：点我下载 2：Win： ①SSR：点我下载 3：IOS：暂不提供账号，请商店购买（需要切换到美区）或者爱思助手免费下载 4：MAC： ①：SSR：点我下载]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>SSR</tag>
+        <tag>使用方法</tag>
+        <tag>下载链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SSR基础教程]]></title>
+    <url>%2Flzy%2F2018%2F11%2F23%2FSSR%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[一：使用前准备 下载：点我下载(仅限Android客户端，其它客户端请看SSR客户端说明)ssr内有个自带的订阅链接，不过没什么用，安装完成打开后后点击左上角shadowsocks R，会弹出来所有的节点信息，点击右下角加号，会弹出来菜单，我们选择添加/升级SSR订阅，会出来这个自带的订阅，左划删除，选择与节点一起删除，这样使用前准备就完成了 二：怎样使用作为使用者，一般会得到节点的形式为链接，比如：ssr://MTQ5LjEyOS4xMD…这样的形式 (此节点无效)这样的形式，这个时候我们就可以复制下来这一串数字字母，打开SSR，点击右下角加号，选择从剪切板导入，提示是否导入，点击确定即可。 NFC这边不再介绍 扫描二维码也挺常用，适用于两个手机之间你展示码，我扫码来共享节点。但是由于SSR为了保证安全性不允许截屏 (解决方法可反编译软件在Activity的onCreate()方法的Layout初始化部分加入以下代码Window win = getWindow(); win.addFlags(WindowManager.LayoutParams.FLAG_SECURE);来实现强制允许截屏），所以截图分享基本用不到。 手动设置更为详细，但是前提是你需要知道shadowsocks R各项配置参数，一般搭建者会做这个工作。 添加/升级SSR订阅，用于商业化的机场为了系统化会给你一个私密的订阅链接，用于节点自动更新。 最基本的操作就是这些，更多请看SSR客户端说明]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>SSR</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[为什么写博客？]]></title>
+    <url>%2Flzy%2F2018%2F08%2F28%2F%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[博客如今也像贴吧一样逐渐没落，现在的写者和看客越来越少，说实话我不想写，太鸡儿麻烦了，现在面向市场的众多APP都很方便的编写和发布，不过关于SSR这方面的东西是我们国家明令禁止的，我曾用简书，石墨文档等编写过一些文章，不过发布后都不能经过审核而被屏蔽，只能自己浏览。无奈只能写在博客里 要有一个稳定的博客平台，它还是得运行在服务器上，通过域名来访问，这些我都！没！有！开玩笑的，有是有，不过不是永久有效的就懒得搭建了，现在用Github来部署了一些静态网页，把不能经过审核的东西写在上面，如果有可能还会写在简书上，通过我在博客里分享的链接就可以看到了。 Tip：Github在国内虽然能正常访问，但是速度慢的很，初次打开此网站不挂梯子加载很慢，可尝试连接ssr后打开本网站。]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+  </entry>
 </search>
