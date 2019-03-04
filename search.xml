@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[百度网盘 9.2.6 VIP纯净破解共存版]]></title>
+    <url>%2F2019%2F03%2F05%2F%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%209.2.6%20VIP%E7%BA%AF%E5%87%80%E7%A0%B4%E8%A7%A3%E5%85%B1%E5%AD%98%E7%89%88%2F</url>
+    <content type="text"><![CDATA[版本说明：·去掉百度网盘的“看吧”模块；·线程调到最大，理论上可以满速下载；·去除“反馈、搜一搜、垃圾清理、更多工具”；·去除“检查更新、软件游戏推荐”；·去除设置界面那里的“小红点”；·去除“内置软件apk”的推荐应用；·去除“推荐vip的广告”；·去除下完文件时右边弹出“安全扫描”按钮；·去除“免流量特权”（可选有或没有）；·恢复官方的包名不共存（可选有或没有）；·点亮“SVIP的图标”仅为美观好看；·去除启动打开时的启动广告；·去除首次打开时的更新提示；·跳过启动等待时间，快速进入主界面。 破倍速特点：·去初装向导，去更新，去广告，去自启，破签名，破解VIP功能（可能会失效具体自测） 重要提示：不要更新软件，否则会恢复原版！软件能用就用，感觉不好用就卸载，谁也不能保证一直能用，毕竟官方对此也不会置之不理。ps:此软件仅供学习交流使用，禁止发布到网络平台。 下载链接：点我下载提取码:fd81 截图示例]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>破解版</tag>
+        <tag>百度云</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SuSSR_Magisk模块说明（需root）]]></title>
     <url>%2F2019%2F02%2F23%2FSuSSR_Magisk%E6%A8%A1%E5%9D%97%E8%AF%B4%E6%98%8E%2F</url>
     <content type="text"><![CDATA[随着SuperSU的渐渐没落，Magisk成为了新秀，它能够实现不修改/system但实现修改的效果，而且可以对系统隐藏root，实现OTA升级。 Github更新：https://github.com/topjohnwu/Magisk/releases XDA官方帖：http://forum.xda-developers.com/apps/magisk/mod-magisk-v1-universal-systemless-t3432382) 步入正题，Magisk默认关闭核心功能模式， 所以我们将SuSSR复制到system/xbin后，不重启手机时可以使用，一但重启手机，system分区被还原，我们复制进去的文件也被删除，而我又不想打开核心功能模式，因为一旦打开，其它已经安装的模块将不会被载入，system分区被修改（包括添加，删除分区内文件或软件）后，OTA就无法完成。 我也是受此问题困扰，虽然我不经常用SuSSR，但我还是想把它放进去，以备不时之需，就索性将它制作成了Magisk模块，有需要的可以下载：点我下载 提取码:rw76 安装 1：打开Magisk，点击模块 2：点击下面的加号 3：选择你刚才下载的压缩包，确定刷入 4：选择重启，之后就可以看到成功刷入啦！ SuSSR的具体配置还是需要自己进入system/xbin/sussr内编辑，重启后配置依然生效。]]></content>
@@ -78,7 +90,7 @@
   <entry>
     <title><![CDATA[SSR基础教程]]></title>
     <url>%2F2018%2F11%2F23%2FSSR%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[一：使用前准备 下载：点我下载(仅限Android客户端，其它客户端请看SSR客户端说明)ssr内有个自带的订阅链接，不过没什么用，安装完成打开后后点击左上角shadowsocks R，会弹出来所有的节点信息，点击右下角加号，会弹出来菜单，我们选择添加/升级SSR订阅，会出来这个自带的订阅，左划删除，选择与节点一起删除，这样使用前准备就完成了 二：怎样使用作为使用者，一般会得到节点的形式为链接，比如：ssr://MTQ5LjEyOS4xMD…这样的形式 (此节点无效)这样的形式，这个时候我们就可以复制下来这一串数字字母，打开SSR，点击右下角加号，选择从剪切板导入，提示是否导入，点击确定即可。 NFC这边不再介绍 扫描二维码也挺常用，适用于两个手机之间你展示码，我扫码来共享节点。但是由于SSR为了保证安全性不允许截屏 (解决方法可反编译软件在Activity的onCreate()方法的Layout初始化部分加入以下代码Window win = getWindow(); win.addFlags(WindowManager.LayoutParams.FLAG_SECURE);来实现强制允许截屏），所以截图分享基本用不到。 手动设置更为详细，但是前提是你需要知道shadowsocks R各项配置参数，一般搭建者会做这个工作。 添加/升级SSR订阅，用于商业化的机场为了系统化会给你一个私密的订阅链接，用于节点自动更新。 最基本的操作就是这些，更多请看SSR客户端说明]]></content>
+    <content type="text"><![CDATA[一：使用前准备(此教程图床已失效，等待后续更新。。。) 下载：点我下载(仅限Android客户端，其它客户端请看SSR客户端说明)ssr内有个自带的订阅链接，不过没什么用，安装完成打开后后点击左上角shadowsocks R，会弹出来所有的节点信息，点击右下角加号，会弹出来菜单，我们选择添加/升级SSR订阅，会出来这个自带的订阅，左划删除，选择与节点一起删除，这样使用前准备就完成了 二：怎样使用作为使用者，一般会得到节点的形式为链接，比如：ssr://MTQ5LjEyOS4xMD…这样的形式 (此节点无效)这样的形式，这个时候我们就可以复制下来这一串数字字母，打开SSR，点击右下角加号，选择从剪切板导入，提示是否导入，点击确定即可。 NFC这边不再介绍 扫描二维码也挺常用，适用于两个手机之间你展示码，我扫码来共享节点。但是由于SSR为了保证安全性不允许截屏 (解决方法可反编译软件在Activity的onCreate()方法的Layout初始化部分加入以下代码Window win = getWindow(); win.addFlags(WindowManager.LayoutParams.FLAG_SECURE);来实现强制允许截屏），所以截图分享基本用不到。 手动设置更为详细，但是前提是你需要知道shadowsocks R各项配置参数，一般搭建者会做这个工作。 添加/升级SSR订阅，用于商业化的机场为了系统化会给你一个私密的订阅链接，用于节点自动更新。 最基本的操作就是这些，更多请看SSR客户端说明]]></content>
       <categories>
         <category>Markdown</category>
       </categories>
