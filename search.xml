@@ -99,14 +99,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[为什么写博客？]]></title>
-    <url>%2Flzy%2F2018%2F08%2F28%2F%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[博客如今也像贴吧一样逐渐没落，现在的写者和看客越来越少，说实话我不想写，太鸡儿麻烦了，现在面向市场的众多APP都很方便的编写和发布，不过关于SSR这方面的东西是我们国家明令禁止的，我曾用简书，石墨文档等编写过一些文章，不过发布后都不能经过审核而被屏蔽，只能自己浏览。无奈只能写在博客里 要有一个稳定的博客平台，它还是得运行在服务器上，通过域名来访问，这些我都！没！有！开玩笑的，有是有，不过不是永久有效的就懒得搭建了，现在用Github来部署了一些静态网页，把不能经过审核的东西写在上面，如果有可能还会写在简书上，通过我在博客里分享的链接就可以看到了。 Tip：Github在国内虽然能正常访问，但是速度慢的很，初次打开此网站不挂梯子加载很慢，可尝试连接ssr后打开本网站。]]></content>
-      <categories>
-        <category>Markdown</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2Flzy%2F2018%2F06%2F28%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to my secret space]]></content>
