@@ -104,4 +104,9 @@
         <tag>SSR</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2Flzy%2F2018%2F06%2F28%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to my secret space]]></content>
+  </entry>
 </search>
