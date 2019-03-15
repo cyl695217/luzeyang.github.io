@@ -107,7 +107,7 @@
 <meta name="keywords" content="SSR,免流">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于免流">
-<meta property="og:url" content="https://luzeyang.github.io/2018/12/24/关于免流/index.html">
+<meta property="og:url" content="https://github.com/luzeyang/luzeyang.github.io.git/2018/12/24/关于免流/index.html">
 <meta property="og:site_name" content="路遥的博客">
 <meta property="og:description" content="为了方便理解，我用比较通俗的语言来描述关于ssrr免流的问题">
 <meta property="og:locale" content="zh-CN">
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="https://luzeyang.github.io/2018/12/24/关于免流/">
+  <link rel="canonical" href="https://github.com/luzeyang/luzeyang.github.io.git/2018/12/24/关于免流/">
 
 
 
@@ -405,7 +405,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://luzeyang.github.io/2018/12/24/关于免流/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/luzeyang/luzeyang.github.io.git/2018/12/24/关于免流/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="路遥">
@@ -519,7 +519,7 @@
       
         <p>为了方便理解，我用比较通俗的语言来描述关于ssrr免流的问题<a id="more"></a></p>
 <h1 id="什么是免流"><a href="#什么是免流" class="headerlink" title="什么是免流"></a>什么是免流</h1><p>免流就是免花费你的手机流量，在运营商规定的服务网站或者APP消费的流量都不记入你的流量总额，就像你用大王卡，那么微信QQ等应用花费的流量都记入免费流量，又或者说是联通卡，通过联通移动网络登入手机营业厅，沃商店等他们自己公司的APP，也是不会花费流量的，就像你发短信到10010或者10086一样，不会扣你话费。</p>
-<h1 id="免流原理"><a href="#免流原理" class="headerlink" title="免流原理"></a>免流原理</h1><p>运营商是通过什么来判断你是浏览的自家网站或者APP的呢？最主要的就是Host和端口，SSR免流的原理是通过服务器转发数据包，去掉真实Host，自定义特定Host（即混淆参数，<a href="https://luzeyang.github.io/2018/12/24/hunxiao/">了解混淆参数</a>），当这个特定的Host恰好是运营商的白名单Host、端口又复合时（移动、联通一般是80，电信随意，移动基本上关闭了上网白名单，很难实现免流了）时，就达到上网不扣费的目的了。</p>
+<h1 id="免流原理"><a href="#免流原理" class="headerlink" title="免流原理"></a>免流原理</h1><p>运营商是通过什么来判断你是浏览的自家网站或者APP的呢？最主要的就是Host和端口，SSR免流的原理是通过服务器转发数据包，去掉真实Host，自定义特定Host（即混淆参数，<a href="https://luzeyang.github.io/2018/12/24/hunxiao/" target="_blank" rel="noopener">了解混淆参数</a>），当这个特定的Host恰好是运营商的白名单Host、端口又复合时（移动、联通一般是80，电信随意，移动基本上关闭了上网白名单，很难实现免流了）时，就达到上网不扣费的目的了。</p>
 <h1 id="流量那些事"><a href="#流量那些事" class="headerlink" title="流量那些事"></a>流量那些事</h1><p>为了防止用户的为所欲为，无奸不商的各大运营商基本上都会给用户设置流量上限，最常见的就是40G后限速，比如我的39元冰淇淋特坑套餐就是上限15G，超过15G后限速1Mbps，这里顺便说一下带宽和实际上行下载速度的关系，带宽除以8就是实际的网速，比如1Mbps的下载速度128kb/s。当你运营商带宽大于云服务器的带宽时，只能跑满云服务器的带宽，当你运营商的带宽小于云服务器的带宽时，只能跑满运营商的带宽。</p>
 <p>现在大部分的手机网速显示是没有过滤VPN流量的，所以基本上都会显示双倍网速，具体网速在下拉通知栏中ssr通知条内。</p>
 <p>还有就是手机流量和云服务器流量的关系，你手机流量总额是你自己的，云服务器也有它自己的流量，正常情况下(只考虑单向倍率)，你连接到ssr时，你手机花费1M或者1G流量，对应的云服务器也会花费1M或者1G流量。免流情况下，只花费服务器流量，而不会花费你手机流量。</p>
