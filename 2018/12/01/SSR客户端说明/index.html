@@ -107,7 +107,7 @@
 <meta name="keywords" content="SSR">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSR客户端说明">
-<meta property="og:url" content="https://gitee.com/luzeyang/luzeyang/2018/12/01/SSR客户端说明/index.html">
+<meta property="og:url" content="https://github.com/luzeyang/luzeyang/2018/12/01/SSR客户端说明/index.html">
 <meta property="og:site_name" content="路遥的博客">
 <meta property="og:description" content="SSR是一款非常优秀的代理软件，首先你要明白它的工作原理。">
 <meta property="og:locale" content="zh-CN">
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="https://gitee.com/luzeyang/luzeyang/2018/12/01/SSR客户端说明/">
+  <link rel="canonical" href="https://github.com/luzeyang/luzeyang/2018/12/01/SSR客户端说明/">
 
 
 
@@ -405,11 +405,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitee.com/luzeyang/luzeyang/luzeyang/2018/12/01/SSR客户端说明/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/luzeyang/luzeyang/luzeyang/2018/12/01/SSR客户端说明/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="路遥">
-      <meta itemprop="description" content="始於臉紅    終於眼紅">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/luzeyang/images/avatar.png">
     </span>
 
@@ -520,7 +520,7 @@
         <p>　　SSR是一款非常优秀的代理软件，首先你要明白它的工作原理。<a id="more"></a>在正常情况下，我们手机数据（流量）传输都是直接与基站（服务器）相连的，为了网络环境的健康，我们国家建立了防火墙，也就是说在我们国内只能访问国内的网络。所以有些无法连接网站会显示404，当我们出于某种需求需要连接外网时就需要一些代理软件来实现了。<br>　　SSR的功能通俗来讲就是将你产生的数据流量经过代理，伪装成你vps所在地的ip来进行上网，由于其它国家地区基本上都没有墙，所以当你使用代理时仍可正常访问国内的网络，只是会受到网络延迟的影响。<br>　　下面介绍一下SSR的一些比较关键的功能选项。</p>
 <h1 id="一：服务器设置"><a href="#一：服务器设置" class="headerlink" title="一：服务器设置"></a>一：服务器设置</h1><p>　　1：群组名和配置名称。随意，主要是用来区分是哪个节点。<br>　　2：服务器～混淆参数。这几个选项都是当你在vps上安装ShadowsocksR所选择的，协议参数和混淆参数默认不填写，如果你仅仅翻墙，那么远程端口，加密方法，协议，混淆方式都可以随机选择。如果你还想免流，那这几个选项会有特定的要求，混淆参数也为必填写项，<a href="https://luzeyang.github.io/2018/12/24/hunxiao/" target="_blank" rel="noopener">各运营商混淆参数整合</a>。</p>
 <h1 id="二：功能设置"><a href="#二：功能设置" class="headerlink" title="二：功能设置"></a>二：功能设置</h1><p>　　1：路由。默认全局，手机端一般选择这个即可，我挂在路由器上时一般会选择仅代理中国大陆无法访问的地址。<br>　　2：ipv6路由。默认关闭，ipv6地址可用时可用，暂不用打开。<br>　　3：分应用代理。默认关闭。这个功能比较常用，可以打开，打开后会列出你手机上所有的应用，绕行模式默认关闭，当你选中一个应用时，打开SSR并运行，只要这个被选中的应用运行，这个代理才会生效。比如，我微信经常打开，不需要翻墙就可以正常使用，而且我还喜欢看youtube，但是youtube需要翻墙才能使用，而我又不想每次打开youtube之前都打开SSR，这个时候就可以在分应用代理那里把youtube打开而不选择微信，这样微信的流量就不会经过SSR代理，也就是SSR在后台也不会运行，只有当你打开youtube时产生的流量才经过SSR代理，这样就算微信youtube同时打开也不会影响微信的信息延迟和youtube的观看。<br>　　4：udp转发。默认关闭，可不开启，有些ShadowsocksR支持udp转发但是SSR客户端貌似还不能做到，打开会导致无网络。<br>　　5：请求忽略电池优化。默认关闭，对于小米MIUI，华为EMUI等高度定制系统，如果长时间不自行清理后台它可能会自动清理后台，这种情况在熄屏情况下容易出现，比如你经常挂着SSR下载大文件，一下就要下载三四十分钟而又把手机放在一边时可以打开这个选项，以免杀后台导致下载失败。<br>　　其它选项基本上都可以按照它的默认值就可以了。</p>
-<h1 id="三：下载链接"><a href="#三：下载链接" class="headerlink" title="三：下载链接"></a>三：下载链接</h1><p>　　1：Android：<br>　　①SSR：<a href="https://cdn.jsdelivr.net/gh/Oumig/PCN/Client/ssrr-android.apk" target="_blank" rel="noopener">点我下载</a><br>　　2：Win：<br>　　①SSR：<a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">点我下载</a><br>　　3：IOS：暂不提供账号，请商店购买（需要切换到美区）或者爱思助手免费下载<br>　　4：MAC：<br>　　①：SSR：<a href="https://cdn.jsdelivr.net/gh/Oumig/PCN/Client/ssr-mac.dmg" target="_blank" rel="noopener">点我下载</a></p>
+<h1 id="三：下载链接"><a href="#三：下载链接" class="headerlink" title="三：下载链接"></a>三：下载链接</h1><p>　　1：Android：<br>　　①SSR：<a href="https://cdn.jsdelivr.net/gh/Oumig/PCN/Client/ssrr-android.apk" target="_blank" rel="noopener">点我下载</a><br>　　2：Win：<br>　　①SSR：<a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases">点我下载</a><br>　　3：IOS：暂不提供账号，请商店购买（需要切换到美区）或者爱思助手免费下载<br>　　4：MAC：<br>　　①：SSR：<a href="https://cdn.jsdelivr.net/gh/Oumig/PCN/Client/ssr-mac.dmg" target="_blank" rel="noopener">点我下载</a></p>
 
       
     </div>
@@ -630,7 +630,7 @@
               <img class="site-author-image" itemprop="image" src="/luzeyang/images/avatar.png" alt="路遥">
             
               <p class="site-author-name" itemprop="name">路遥</p>
-              <div class="site-description motion-element" itemprop="description">始於臉紅    終於眼紅</div>
+              <div class="site-description motion-element" itemprop="description"></div>
           </div>
 
           
