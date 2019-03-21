@@ -103,18 +103,18 @@
 
 
 
-  <meta name="description" content="本脚本适用环境系统支持：CentOS 6+，Debian 7+，Ubuntu 12+内存要求：≥128M日期　　：2019 年 01 月 11 日 关于本脚本1、一键安装 Shadowsocks-Python， ShadowsocksR， Shadowsocks-Go， Shadowsocks-libev 版（四选一）服务端；2、各版本的启动脚本及配置文件名不再重合；3、每次运行可安装一种版本；4">
+  <meta name="description" content="本脚本适用环境系统支持：CentOS 6+，Debian 7+，Ubuntu 12+内存要求：≥128M日期　　：2019 年 01 月 11 日">
 <meta name="keywords" content="SSR,教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shadowsocks 一键安装脚本（四合一）">
 <meta property="og:url" content="https://luzeyang.xyz/2019/03/21/Shadowsocks 一键安装脚本（四合一）/index.html">
 <meta property="og:site_name" content="路遥的博客">
-<meta property="og:description" content="本脚本适用环境系统支持：CentOS 6+，Debian 7+，Ubuntu 12+内存要求：≥128M日期　　：2019 年 01 月 11 日 关于本脚本1、一键安装 Shadowsocks-Python， ShadowsocksR， Shadowsocks-Go， Shadowsocks-libev 版（四选一）服务端；2、各版本的启动脚本及配置文件名不再重合；3、每次运行可安装一种版本；4">
+<meta property="og:description" content="本脚本适用环境系统支持：CentOS 6+，Debian 7+，Ubuntu 12+内存要求：≥128M日期　　：2019 年 01 月 11 日">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-21T13:15:10.020Z">
+<meta property="og:updated_time" content="2019-03-21T13:28:30.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shadowsocks 一键安装脚本（四合一）">
-<meta name="twitter:description" content="本脚本适用环境系统支持：CentOS 6+，Debian 7+，Ubuntu 12+内存要求：≥128M日期　　：2019 年 01 月 11 日 关于本脚本1、一键安装 Shadowsocks-Python， ShadowsocksR， Shadowsocks-Go， Shadowsocks-libev 版（四选一）服务端；2、各版本的启动脚本及配置文件名不再重合；3、每次运行可安装一种版本；4">
+<meta name="twitter:description" content="本脚本适用环境系统支持：CentOS 6+，Debian 7+，Ubuntu 12+内存要求：≥128M日期　　：2019 年 01 月 11 日">
 
 
 
@@ -448,7 +448,7 @@
                 
               
 
-              <time title="创建时间：2019-03-21 00:00:00 / 修改时间：21:15:10" itemprop="dateCreated datePublished" datetime="2019-03-21T00:00:00+08:00">2019-03-21</time>
+              <time title="创建时间：2019-03-21 00:00:00 / 修改时间：21:28:30" itemprop="dateCreated datePublished" datetime="2019-03-21T00:00:00+08:00">2019-03-21</time>
             
 
             
@@ -505,7 +505,7 @@
       
 
       
-        <h1 id="本脚本适用环境"><a href="#本脚本适用环境" class="headerlink" title="本脚本适用环境"></a>本脚本适用环境</h1><p>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+<br>内存要求：≥128M<br>日期　　：2019 年 01 月 11 日</p>
+        <h1 id="本脚本适用环境"><a href="#本脚本适用环境" class="headerlink" title="本脚本适用环境"></a>本脚本适用环境</h1><p>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+<br>内存要求：≥128M<br>日期　　：2019 年 01 月 11 日<br><a id="more"></a></p>
 <h1 id="关于本脚本"><a href="#关于本脚本" class="headerlink" title="关于本脚本"></a>关于本脚本</h1><p>1、一键安装 Shadowsocks-Python， ShadowsocksR， Shadowsocks-Go， Shadowsocks-libev 版（四选一）服务端；<br>2、各版本的启动脚本及配置文件名不再重合；<br>3、每次运行可安装一种版本；<br>4、支持以多次运行来安装多个版本，且各个版本可以共存（注意端口号需设成不同）；<br>5、若已安装多个版本，则卸载时也需多次运行（每次卸载一种）；</p>
 <h1 id="默认配置"><a href="#默认配置" class="headerlink" title="默认配置"></a>默认配置</h1><p>服务器端口：自己设定（如不设定，默认从 9000-19999 之间随机生成）<br>密码：自己设定（如不设定，默认为 teddysun.com）<br>加密方式：自己设定（如不设定，Python 和 libev 版默认为 aes-256-gcm，R 和 Go 版默认为 aes-256-cfb）<br>协议（protocol）：自己设定（如不设定，默认为 origin）（仅限 ShadowsocksR 版）<br>混淆（obfs）：自己设定（如不设定，默认为 plain）（仅限 ShadowsocksR 版）<br>备注：脚本默认创建单用户配置文件，如需配置多用户，请手动修改相应的配置文件后重启即可。</p>
 <h1 id="客户端下载"><a href="#客户端下载" class="headerlink" title="客户端下载"></a>客户端下载</h1><p>常规版 Windows 客户端<br><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks-windows/releases</a></p>
