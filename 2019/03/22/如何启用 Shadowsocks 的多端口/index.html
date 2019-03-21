@@ -103,25 +103,25 @@
 
 
 
-  <meta name="description" content="为了方便理解，我用比较通俗的语言来描述关于ssrr免流的问题">
-<meta name="keywords" content="SSR,免流">
+  <meta name="description" content="一键脚本默认只会开启单个端口以供使用。之所以这么做，是因为考虑到一般都是个人使用才会自己搭建属于自己的 Shadowsocks 服务端，所以在安装交互的时候，默认只要求输入某个端口即可。但如果你想要小范围内分享，那么你可能需要开启多个端口。目前主流的四个版本实际上都是支持多端口的，只不过开启的方法不太一样，本文的重点就是写一下针对不同版本的 Shadowsocks 如何开启多端口。 注意：本文">
+<meta name="keywords" content="SSR,SSR多端口">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于免流">
-<meta property="og:url" content="https://luzeyang.xyz/2018/12/24/关于免流/index.html">
+<meta property="og:title" content="如何启用 Shadowsocks 的多端口">
+<meta property="og:url" content="https://luzeyang.xyz/2019/03/22/如何启用 Shadowsocks 的多端口/index.html">
 <meta property="og:site_name" content="路遥的博客">
-<meta property="og:description" content="为了方便理解，我用比较通俗的语言来描述关于ssrr免流的问题">
+<meta property="og:description" content="一键脚本默认只会开启单个端口以供使用。之所以这么做，是因为考虑到一般都是个人使用才会自己搭建属于自己的 Shadowsocks 服务端，所以在安装交互的时候，默认只要求输入某个端口即可。但如果你想要小范围内分享，那么你可能需要开启多个端口。目前主流的四个版本实际上都是支持多端口的，只不过开启的方法不太一样，本文的重点就是写一下针对不同版本的 Shadowsocks 如何开启多端口。 注意：本文">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-15T04:36:10.346Z">
+<meta property="og:updated_time" content="2019-03-21T13:15:37.260Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于免流">
-<meta name="twitter:description" content="为了方便理解，我用比较通俗的语言来描述关于ssrr免流的问题">
+<meta name="twitter:title" content="如何启用 Shadowsocks 的多端口">
+<meta name="twitter:description" content="一键脚本默认只会开启单个端口以供使用。之所以这么做，是因为考虑到一般都是个人使用才会自己搭建属于自己的 Shadowsocks 服务端，所以在安装交互的时候，默认只要求输入某个端口即可。但如果你想要小范围内分享，那么你可能需要开启多个端口。目前主流的四个版本实际上都是支持多端口的，只不过开启的方法不太一样，本文的重点就是写一下针对不同版本的 Shadowsocks 如何开启多端口。 注意：本文">
 
 
 
 
 
 
-  <link rel="canonical" href="https://luzeyang.xyz/2018/12/24/关于免流/">
+  <link rel="canonical" href="https://luzeyang.xyz/2019/03/22/如何启用 Shadowsocks 的多端口/">
 
 
 
@@ -131,7 +131,7 @@
   };
 </script>
 
-  <title>关于免流 | 路遥的博客</title>
+  <title>如何启用 Shadowsocks 的多端口 | 路遥的博客</title>
   
 
 
@@ -405,7 +405,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://luzeyang.xyz/2018/12/24/关于免流/">
+    <link itemprop="mainEntityOfPage" href="https://luzeyang.xyz/2019/03/22/如何启用 Shadowsocks 的多端口/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="路遥">
@@ -422,7 +422,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于免流
+          <h1 class="post-title" itemprop="name headline">如何启用 Shadowsocks 的多端口
 
               
             
@@ -448,7 +448,7 @@
                 
               
 
-              <time title="创建时间：2018-12-24 00:00:00" itemprop="dateCreated datePublished" datetime="2018-12-24T00:00:00+08:00">2018-12-24</time>
+              <time title="创建时间：2019-03-22 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-22T00:00:00+08:00">2019-03-22</time>
             
 
             
@@ -465,7 +465,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-15 12:36:10" itemprop="dateModified" datetime="2019-03-15T12:36:10+08:00">2019-03-15</time>
+                <time title="修改时间：2019-03-21 21:15:37" itemprop="dateModified" datetime="2019-03-21T21:15:37+08:00">2019-03-21</time>
               
             
           </span>
@@ -482,7 +482,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SSR相关教程/" itemprop="url" rel="index"><span itemprop="name">SSR相关教程</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a></span>
 
                 
                 
@@ -517,12 +517,35 @@
       
 
       
-        <p>为了方便理解，我用比较通俗的语言来描述关于ssrr免流的问题<a id="more"></a></p>
-<h1 id="什么是免流"><a href="#什么是免流" class="headerlink" title="什么是免流"></a>什么是免流</h1><p>免流就是免花费你的手机流量，在运营商规定的服务网站或者APP消费的流量都不记入你的流量总额，就像你用大王卡，那么微信QQ等应用花费的流量都记入免费流量，又或者说是联通卡，通过联通移动网络登入手机营业厅，沃商店等他们自己公司的APP，也是不会花费流量的，就像你发短信到10010或者10086一样，不会扣你话费。</p>
-<h1 id="免流原理"><a href="#免流原理" class="headerlink" title="免流原理"></a>免流原理</h1><p>运营商是通过什么来判断你是浏览的自家网站或者APP的呢？最主要的就是Host和端口，SSR免流的原理是通过服务器转发数据包，去掉真实Host，自定义特定Host（即混淆参数），当这个特定的Host恰好是运营商的白名单Host、端口又复合时（移动、联通一般是80，电信随意，移动基本上关闭了上网白名单，很难实现免流了）时，就达到上网不扣费的目的了。</p>
-<h1 id="流量那些事"><a href="#流量那些事" class="headerlink" title="流量那些事"></a>流量那些事</h1><p>为了防止用户的为所欲为，无奸不商的各大运营商基本上都会给用户设置流量上限，最常见的就是40G后限速，比如我的39元冰淇淋特坑套餐就是上限15G，超过15G后限速1Mbps，这里顺便说一下带宽和实际上行下载速度的关系，带宽除以8就是实际的网速，比如1Mbps的下载速度128kb/s。当你运营商带宽大于云服务器的带宽时，只能跑满云服务器的带宽，当你运营商的带宽小于云服务器的带宽时，只能跑满运营商的带宽。</p>
-<p>现在大部分的手机网速显示是没有过滤VPN流量的，所以基本上都会显示双倍网速，具体网速在下拉通知栏中ssr通知条内。</p>
-<p>还有就是手机流量和云服务器流量的关系，你手机流量总额是你自己的，云服务器也有它自己的流量，正常情况下(只考虑单向倍率)，你连接到ssr时，你手机花费1M或者1G流量，对应的云服务器也会花费1M或者1G流量。免流情况下，只花费服务器流量，而不会花费你手机流量。</p>
+        <p>　　一键脚本默认只会开启单个端口以供使用。之所以这么做，是因为考虑到一般都是个人使用才会自己搭建属于自己的 Shadowsocks 服务端，所以在安装交互的时候，默认只要求输入某个端口即可。但如果你想要小范围内分享，那么你可能需要开启多个端口。<br>目前主流的四个版本实际上都是支持多端口的，只不过开启的方法不太一样，本文的重点就是写一下针对不同版本的 Shadowsocks 如何开启多端口。</p>
+<p>注意：本文是以四合一版的正确安装和使用为前提条件的。</p>
+<h1 id="一、Shadowsocks-Python"><a href="#一、Shadowsocks-Python" class="headerlink" title="一、Shadowsocks-Python"></a>一、Shadowsocks-Python</h1><p>Shadowsocks-Python 版的配置文件路径 /etc/shadowsocks-python/config.json，下面以修改该配置文件来说明。<br>在 Linux 下建议使用 vim 或者 nano 来编辑此配置文件。具体如何使用这两种编辑器，这里不多说明，可自行去搜索相关用法。<br>Shadowsocks-Python 版多端口配置文件示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</span><br><span class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</span><br><span class="line">    &quot;local_port&quot;:1080,</span><br><span class="line">    &quot;port_password&quot;:&#123;</span><br><span class="line">         &quot;9000&quot;:&quot;password0&quot;,</span><br><span class="line">         &quot;9001&quot;:&quot;password1&quot;,</span><br><span class="line">         &quot;9002&quot;:&quot;password2&quot;,</span><br><span class="line">         &quot;9003&quot;:&quot;password3&quot;,</span><br><span class="line">         &quot;9004&quot;:&quot;password4&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;timeout&quot;:300,</span><br><span class="line">    &quot;method&quot;:&quot;your_encryption_method&quot;,</span><br><span class="line">    &quot;fast_open&quot;: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>重点在于 port_password 字段的修改。<br>你想要多少端口就添加多少端口，注意需要符合 json 格式，里面的最后一行后面是没有英文逗号的，整个大括号的最后需要有一个英文逗号。<br>修改完成后，保存配置文件，重启之。命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks-python restart</span><br></pre></td></tr></table></figure></p>
+<h1 id="二、ShadowsocksR"><a href="#二、ShadowsocksR" class="headerlink" title="二、ShadowsocksR"></a>二、ShadowsocksR</h1><p>ShadowsocksR 版的配置文件路径 /etc/shadowsocks-r/config.json，下面以修改该配置文件来说明。<br>ShadowsocksR 版多端口配置文件示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</span><br><span class="line">    &quot;server_ipv6&quot;: &quot;[::]&quot;,</span><br><span class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</span><br><span class="line">    &quot;local_port&quot;:1080,</span><br><span class="line">    &quot;port_password&quot;:&#123;</span><br><span class="line">        &quot;9000&quot;:&quot;password0&quot;,</span><br><span class="line">        &quot;9001&quot;:&quot;password1&quot;,</span><br><span class="line">        &quot;9002&quot;:&quot;password2&quot;,</span><br><span class="line">        &quot;9003&quot;:&quot;password3&quot;,</span><br><span class="line">        &quot;9004&quot;:&quot;password4&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;timeout&quot;:300,</span><br><span class="line">    &quot;method&quot;:&quot;your_encryption_method&quot;,</span><br><span class="line">    &quot;protocol&quot;: &quot;your_protocol&quot;,</span><br><span class="line">    &quot;protocol_param&quot;: &quot;&quot;,</span><br><span class="line">    &quot;obfs&quot;: &quot;your_obfs&quot;,</span><br><span class="line">    &quot;obfs_param&quot;: &quot;&quot;,</span><br><span class="line">    &quot;redirect&quot;: &quot;&quot;,</span><br><span class="line">    &quot;dns_ipv6&quot;: false,</span><br><span class="line">    &quot;fast_open&quot;: false,</span><br><span class="line">    &quot;workers&quot;: 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>重点在于 port_password 字段的修改。<br>你想要多少端口就添加多少端口，注意需要符合 json 格式，里面的最后一行后面是没有英文逗号的，整个大括号的最后需要有一个英文逗号。<br>修改完成后，保存配置文件，重启之。命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks-r restart</span><br></pre></td></tr></table></figure></p>
+<h1 id="三、Shadowsocks-Go"><a href="#三、Shadowsocks-Go" class="headerlink" title="三、Shadowsocks-Go"></a>三、Shadowsocks-Go</h1><p>Shadowsocks-Go 版的配置文件路径 /etc/shadowsocks-go/config.json，下面以修改该配置文件来说明。<br>Shadowsocks-Go 版多端口配置文件示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;port_password&quot;:&#123;</span><br><span class="line">         &quot;9000&quot;:&quot;password0&quot;,</span><br><span class="line">         &quot;9001&quot;:&quot;password1&quot;,</span><br><span class="line">         &quot;9002&quot;:&quot;password2&quot;,</span><br><span class="line">         &quot;9003&quot;:&quot;password3&quot;,</span><br><span class="line">         &quot;9004&quot;:&quot;password4&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;method&quot;:&quot;your_encryption_method&quot;,</span><br><span class="line">    &quot;timeout&quot;:300</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>重点在于 port_password 字段的修改。<br>你想要多少端口就添加多少端口，注意需要符合 json 格式，里面的最后一行后面是没有英文逗号的，整个大括号的最后需要有一个英文逗号。<br>修改完成后，保存配置文件，重启之。命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks-go restart</span><br></pre></td></tr></table></figure></p>
+<h1 id="四、Shadowsocks-libev"><a href="#四、Shadowsocks-libev" class="headerlink" title="四、Shadowsocks-libev"></a>四、Shadowsocks-libev</h1><p>Shadowsocks-libev 版是唯一不能单纯靠修改配置文件来开启多端口的。<br>不过，开发者单独开发了一个 ss-manager 来管理和开启多端口，其工作原理大致如下：<br>调用 ss-server 并根据配置文件里的多个端口号，在当前用户目录下生成隐藏文件夹 .shadowsocks 以及拆分配置文件为 .shadowsocks_端口号.conf，并以此创建新的进程，再生成 .shadowsocks_端口号.pid 来保存进程的 pid 信息。<br>最终，创建出来的 ss-server 进程数和配置文件里的端口数相同。也就是说，每个端口需要开启一个 ss-server 进程。</p>
+<p>于是就简单写了一个用于 Shadowsocks-libev 版多用户管理 ss-manager 的启动脚本，可以通过编辑 json 配置文件 /etc/shadowsocks-manager/config.json 的形式，启动和停止多端口的 libev 版服务端。<br>下面说一下用法。</p>
+<p>1、下载该启动脚本并赋予执行权限。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/init.d/shadowsocks-manager https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-manager</span><br><span class="line">chmod 755 /etc/init.d/shadowsocks-manager</span><br></pre></td></tr></table></figure></p>
+<p>2、新建存放配置文件的目录<br>mkdir /etc/shadowsocks-manager<br>3、创建多端口配置文件，/etc/shadowsocks-manager/config.json 示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</span><br><span class="line">    &quot;port_password&quot;:&#123;</span><br><span class="line">         &quot;9000&quot;:&quot;password0&quot;,</span><br><span class="line">         &quot;9001&quot;:&quot;password1&quot;,</span><br><span class="line">         &quot;9002&quot;:&quot;password2&quot;,</span><br><span class="line">         &quot;9003&quot;:&quot;password3&quot;,</span><br><span class="line">         &quot;9004&quot;:&quot;password4&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;timeout&quot;:300,</span><br><span class="line">    &quot;user&quot;:&quot;nobody&quot;,</span><br><span class="line">    &quot;method&quot;:&quot;your_encryption_method&quot;,</span><br><span class="line">    &quot;nameserver&quot;:&quot;8.8.8.8&quot;,</span><br><span class="line">    &quot;mode&quot;:&quot;tcp_and_udp&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>关于配置文件，更多选项，请参考：<br><a href="https://github.com/shadowsocks/shadowsocks-libev/blob/master/doc/shadowsocks-libev.asciidoc" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks-libev/blob/master/doc/shadowsocks-libev.asciidoc</a></p>
+<p>4、使用启动脚本<br>启动：/etc/init.d/shadowsocks-manager start<br>停止：/etc/init.d/shadowsocks-manager stop<br>重启：/etc/init.d/shadowsocks-manager restart<br>查看状态：/etc/init.d/shadowsocks-manager status</p>
+<p>五、共通步骤<br>如果你是在 CentOS 系统里运行的，也许会需要将配置文件里对应的端口在防火墙里打开。<br>CentOS 6 一般是使用 iptables，先确认一下状态：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/iptables status</span><br></pre></td></tr></table></figure></p>
+<p>如果是处于运行中，那么打开新端口的命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 新端口号 -j ACCEPT</span><br><span class="line">iptables -I INPUT -m state --state NEW -m udp -p udp --dport 新端口号 -j ACCEPT</span><br></pre></td></tr></table></figure></p>
+<p>保存并重启 iptables，命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/iptables save</span><br><span class="line">/etc/init.d/iptables restart</span><br></pre></td></tr></table></figure></p>
+<p>显示 iptables 一览，并确认端口是否添加成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -L -n</span><br></pre></td></tr></table></figure></p>
+<p>CentOS 7 一般是使用 firewalld，先确认一下状态：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure></p>
+<p>如果是处于运行中，那么打开新端口的命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=public --add-port=新端口号/tcp</span><br><span class="line">firewall-cmd --permanent --zone=public --add-port=新端口号/udp</span><br></pre></td></tr></table></figure></p>
+<p>重新加载 firewalld，命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure></p>
+<p>显示 firewall 一览，并确认端口是否添加成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure></p>
+<p>Debian 或 Ubuntu 默认一般是不开启防火墙的，当然也有可能出现特殊情况已经开启了，那么同样需要将配置文件里对应的端口在防火墙里打开。<br>当然，如果你嫌麻烦，那么可以直接将防火墙关闭。<br>iptables 的关闭方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/iptables stop</span><br></pre></td></tr></table></figure></p>
+<p>关闭开机自启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig iptables off</span><br></pre></td></tr></table></figure></p>
+<p>firewalld 的关闭方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure></p>
+<p>关闭开机自启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld</span><br></pre></td></tr></table></figure></p>
+<p>另外，如果你使用的是大公司的 Cloud 产品，比如 AWS，Google Cloud，Azure，阿里云等等，也许还需要在后台的控制面板里将对应的通信端口打开。这里就不多说明了，每家的方法大同小异。</p>
+<hr>
+<p>转载自<a href="https://teddysun.com/" target="_blank" rel="noopener">秋水逸冰</a>，感谢秋大的脚本，访问原帖请挂梯进入。</p>
 
       
     </div>
@@ -577,7 +600,7 @@
           
             <a href="/tags/SSR/" rel="tag"><i class="fa fa-tag"></i> SSR</a>
           
-            <a href="/tags/免流/" rel="tag"><i class="fa fa-tag"></i> 免流</a>
+            <a href="/tags/SSR多端口/" rel="tag"><i class="fa fa-tag"></i> SSR多端口</a>
           
         </div>
       
@@ -590,8 +613,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/01/SSR客户端说明/" rel="next" title="SSR客户端说明">
-                <i class="fa fa-chevron-left"></i> SSR客户端说明
+              <a href="/2019/03/21/Shadowsocks 一键安装脚本（四合一）/" rel="next" title="Shadowsocks 一键安装脚本（四合一）">
+                <i class="fa fa-chevron-left"></i> Shadowsocks 一键安装脚本（四合一）
               </a>
             
           </div>
@@ -599,10 +622,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/28/混淆参数/" rel="prev" title="联通电信SSR混淆、高级混淆">
-                联通电信SSR混淆、高级混淆 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -771,7 +790,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是免流"><span class="nav-number">1.</span> <span class="nav-text">什么是免流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#免流原理"><span class="nav-number">2.</span> <span class="nav-text">免流原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流量那些事"><span class="nav-number">3.</span> <span class="nav-text">流量那些事</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Shadowsocks-Python"><span class="nav-number">1.</span> <span class="nav-text">一、Shadowsocks-Python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、ShadowsocksR"><span class="nav-number">2.</span> <span class="nav-text">二、ShadowsocksR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Shadowsocks-Go"><span class="nav-number">3.</span> <span class="nav-text">三、Shadowsocks-Go</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、Shadowsocks-libev"><span class="nav-number">4.</span> <span class="nav-text">四、Shadowsocks-libev</span></a></li></ol></div>
             
 
           </div>
