@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[记一次手机系统更新（官方RE，保留root）]]></title>
     <url>%2F2019%2F03%2F26%2F%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%89%8B%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%2F</url>
     <content type="text"><![CDATA[笔者手机型号为OnePlus 5T，已解BL锁，官方Recovery，系统为OxygenOS_BETA_26，此次演示是升级到OxygenOS_BETA_27，并保留root，magisk模块。 注意如果你平时喜欢不断安装各种模块，不建议用官方Recovery，因为一旦出现问题就会无法开机，官方Recovery没有开放的操作空间，出现问题也无从解决。此教程仅供参考，请做好备份工作进行，造成的损失概不负责。 ①进入开发者选项，将系统自动更新关闭。 ②进入系统更新，提示已解BL锁和root，需要下载全量包，点击确定，并开始下载全量包等待下载完成 ③打开MT管理器，进入sdcard/.Ota文件夹，点击它，会打开刷机包，长按boot.img，解压到另一边（在sdcard新建一个文件夹存放官方boot.img，我新建的文件夹名为Boot。） ④进入Magisk，这里先看一下我之前安装的模块。进入主页面，点击卸载，点击还原原厂镜像等待还原完成 ⑤进入系统更新，点击重启立即升级升级过程升级成功 ⑥打开Magisk，发现root丢失，点击安装，修补 Boot 镜像文件，选择你之前提取的官方Boot.img刷入成功，经过patch的patched_boot.img被保存在Downloads目录下，复制它到电脑桌面，容易找到。 ⑦电脑已安装对应驱动和adb，win+R，输入cmd打开DOS窗口，输入1adb reboot bootloader 如果有提示就按确定，手机会自动重启到Fastboot模式 输入1fastboot flash boot 文件路径 boot后面有空格，文件路径可直接用鼠标拖patched_boot.img进DOS窗口，成功如下图 输入1fastboot continue 手机会自动重启，完成boot刷入，成功如下图 ⑧打开Magisk，发现已经root，进入模块，之前的模块都在，结束。 ps：Magisk部分操作需要科学上网，否则可能出现修补boot缓慢或者无进度。 你有第三方Recovery ？这就简单了，Magisk XDA官贴，这里下载Magisk包。一加Android Pie之前的机型可以直接进入Recovery，刷全量包，之后紧接着刷Magisk包再开机就可以了。一加Android Pie的机型用MT管理器打开刷机包，删除compatibility.zip，之后和Android Pie之前的包刷入方式一样。]]></content>
+      <categories>
+        <category>Magisk</category>
+      </categories>
+      <tags>
+        <tag>root</tag>
+        <tag>Magisk</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[如何启用 Shadowsocks 的多端口]]></title>
@@ -81,8 +88,8 @@
         <category>SSR相关教程</category>
       </categories>
       <tags>
-        <tag>sussr</tag>
         <tag>Magisk</tag>
+        <tag>sussr</tag>
       </tags>
   </entry>
   <entry>
