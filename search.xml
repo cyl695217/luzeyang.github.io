@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[绕过校园网认证]]></title>
+    <url>%2F2019%2F04%2F01%2F%E7%BB%95%E8%BF%87%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%A4%E8%AF%81%2F</url>
+    <content type="text"><![CDATA[大概一个月前阿里云活动，通过学生认证的购买服务器有很大的优惠，就买了三个月的上海的服务器，本想建站呢，无奈备案过程太过复杂繁琐，就扔在一边不管了，这个月校园网到期了，平常又不怎么用，流量又用不完，所以就没续费，突然有个想法，绕过校园网认证上网。 我们连接校园网，提示需要登录。 我们到终端ping一下ip地址:115.239.210.27，此时是ping不通的，显然这是一个内网，通过这个内网登录到公网，经过认证成功后才能上网。 所以整个认证过程是： 内网登录——公网认证——正常上网绕过过程是： 内网（不登陆）——绕过学校公网——连接服务器——正常上网 那么怎样绕过呢？答案就是依赖端口通过UDP转发。重要的端口有三个，53，67，68。 53端口:53端口为DNS(Domain Name Server,域名服务器)服务器所开放,主要用于域名解析,DNS 服务在NT系统中使用的最为广泛。 67、68端口:67、68端口分别是为Bootp服务的Bootstrap Protocol Server(引导程序协议服务端)和Bootstrap Protocol Client(引导程序协议客户端)开放的端口。 SSR只可惜不代理UDP，只代理TCP，所以我们还是需要用OpenVPN，另一款优秀的代理软件。 搭建过程就不说了，和SSR搭建过程差不多，这里贴上脚本，按照提示一步步输入并回车就行了。1wget --no-check-certificate https://down.cangshui.net/-mysh/FAS/fas.sh &amp;&amp; chmod +x fas.sh &amp;&amp; bash fas.sh 搭建完复制下来所有的输出提示备用。管理指令:重启VPN：1vpn restart FAS后台开启：1onfas 启动VPN：1vpn start FAS后台关闭：1unfas 停止VPN：1vpn stop 数据库开启：1onsql 开任意端口：1port 数据库关闭：1unsql 后台登录，打开线路管理——分类管理，分类名称命名“校园网”，其它也可以，随意，容易辩识就可以 线路管理——新增线路，按照要求填写即可，注意：[domain] 会替换成你的IP或者域名。 打开juiceSSH，输入port，分别选择1，2，并放行53，68端口，也就是53，68的TCP，DUP都要放行。 这里我只截图了放行UDP的，TCP也放行吧，哪个端口能用，取决于学校，一般是53，67，68。我们学校是68，这个自己测试。 打开软件，登录你的账号密码（可后台添加和自行注册），选择线路并安装，再链接校园网，点击连接就可以了 测一下速度，下载速度0.64M/s，我的服务器只有5Mbps，可以满速，实际使用中网速超过1M/s也是可能的 最后放上我用平板测试的截图，B站，未登陆校园网，1080P可以看]]></content>
+      <categories>
+        <category>校园网</category>
+      </categories>
+      <tags>
+        <tag>OpenVPN</tag>
+        <tag>UDP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[记一次手机系统更新（官方RE，保留root）]]></title>
     <url>%2F2019%2F03%2F26%2F%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%89%8B%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%96%B0%2F</url>
     <content type="text"><![CDATA[笔者手机型号为OnePlus 5T，已解BL锁，官方Recovery，系统为OxygenOS_BETA_26，此次演示是升级到OxygenOS_BETA_27，并保留root，magisk模块。 注意如果你平时喜欢不断安装各种模块，不建议用官方Recovery，因为一旦出现问题就会无法开机，官方Recovery没有开放的操作空间，出现问题也无从解决。此教程仅供参考，请做好备份工作进行，造成的损失概不负责。 ①进入开发者选项，将系统自动更新关闭。 ②进入系统更新，提示已解BL锁和root，需要下载全量包，点击确定，并开始下载全量包等待下载完成 ③打开MT管理器，进入sdcard/.Ota文件夹，点击它，会打开刷机包，长按boot.img，解压到另一边（在sdcard新建一个文件夹存放官方boot.img，我新建的文件夹名为Boot。） ④进入Magisk，这里先看一下我之前安装的模块。进入主页面，点击卸载，点击还原原厂镜像等待还原完成 ⑤进入系统更新，点击重启立即升级升级过程升级成功 ⑥打开Magisk，发现root丢失，点击安装，修补 Boot 镜像文件，选择你之前提取的官方Boot.img刷入成功，经过patch的patched_boot.img被保存在Downloads目录下，复制它到电脑桌面，容易找到。 ⑦电脑已安装对应驱动和adb，win+R，输入cmd打开DOS窗口，输入1adb reboot bootloader 如果有提示就按确定，手机会自动重启到Fastboot模式 输入1fastboot flash boot 文件路径 boot后面有空格，文件路径可直接用鼠标拖patched_boot.img进DOS窗口，成功如下图 输入1fastboot continue 手机会自动重启，完成boot刷入，成功如下图 ⑧打开Magisk，发现已经root，进入模块，之前的模块都在，结束。 ps：Magisk部分操作需要科学上网，否则可能出现修补boot缓慢或者无进度。 你有第三方Recovery ？这就简单了，Magisk XDA官贴，这里下载Magisk包。一加Android Pie之前的机型可以直接进入Recovery，刷全量包，之后紧接着刷Magisk包再开机就可以了。一加Android Pie的机型用MT管理器打开刷机包，删除compatibility.zip，之后和Android Pie之前的包刷入方式一样。]]></content>

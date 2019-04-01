@@ -103,25 +103,35 @@
 
 
 
-  <meta name="description" content="一键脚本默认只会开启单个端口以供使用。之所以这么做，是因为考虑到一般都是个人使用才会自己搭建属于自己的 Shadowsocks 服务端，所以在安装交互的时候，默认只要求输入某个端口即可。但如果你想要小范围内分享，那么你可能需要开启多个端口。">
-<meta name="keywords" content="SSR,SSR多端口">
+  <meta name="description" content="大概一个月前阿里云活动，通过学生认证的购买服务器有很大的优惠，就买了三个月的上海的服务器，本想建站呢，无奈备案过程太过复杂繁琐，就扔在一边不管了，这个月校园网到期了，平常又不怎么用，流量又用不完，所以就没续费，突然有个想法，绕过校园网认证上网。　　我们连接校园网，提示需要登录。　　我们到终端ping一下ip地址:115.239.210.27，此时是ping不通的，显然这是一个内网，通过这个内网">
+<meta name="keywords" content="OpenVPN,UDP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何启用 Shadowsocks 的多端口">
-<meta property="og:url" content="https://luzeyang.xyz/2019/03/22/如何启用 Shadowsocks 的多端口/index.html">
+<meta property="og:title" content="绕过校园网认证">
+<meta property="og:url" content="https://luzeyang.xyz/2019/04/01/绕过校园网认证/index.html">
 <meta property="og:site_name" content="路遥的博客">
-<meta property="og:description" content="一键脚本默认只会开启单个端口以供使用。之所以这么做，是因为考虑到一般都是个人使用才会自己搭建属于自己的 Shadowsocks 服务端，所以在安装交互的时候，默认只要求输入某个端口即可。但如果你想要小范围内分享，那么你可能需要开启多个端口。">
+<meta property="og:description" content="大概一个月前阿里云活动，通过学生认证的购买服务器有很大的优惠，就买了三个月的上海的服务器，本想建站呢，无奈备案过程太过复杂繁琐，就扔在一边不管了，这个月校园网到期了，平常又不怎么用，流量又用不完，所以就没续费，突然有个想法，绕过校园网认证上网。　　我们连接校园网，提示需要登录。　　我们到终端ping一下ip地址:115.239.210.27，此时是ping不通的，显然这是一个内网，通过这个内网">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-23T05:52:54.001Z">
+<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca1b8aae0e7f.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca1b8df36efb.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca213e31c3bf.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca21c1e5d15b.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca21c5fc21f6.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca215c02b624.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca21c8f70f7d.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca217cef1f8b.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/01/5ca21da4df81c.png">
+<meta property="og:updated_time" content="2019-04-01T14:44:32.586Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何启用 Shadowsocks 的多端口">
-<meta name="twitter:description" content="一键脚本默认只会开启单个端口以供使用。之所以这么做，是因为考虑到一般都是个人使用才会自己搭建属于自己的 Shadowsocks 服务端，所以在安装交互的时候，默认只要求输入某个端口即可。但如果你想要小范围内分享，那么你可能需要开启多个端口。">
+<meta name="twitter:title" content="绕过校园网认证">
+<meta name="twitter:description" content="大概一个月前阿里云活动，通过学生认证的购买服务器有很大的优惠，就买了三个月的上海的服务器，本想建站呢，无奈备案过程太过复杂繁琐，就扔在一边不管了，这个月校园网到期了，平常又不怎么用，流量又用不完，所以就没续费，突然有个想法，绕过校园网认证上网。　　我们连接校园网，提示需要登录。　　我们到终端ping一下ip地址:115.239.210.27，此时是ping不通的，显然这是一个内网，通过这个内网">
+<meta name="twitter:image" content="https://i.loli.net/2019/04/01/5ca1b8aae0e7f.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="https://luzeyang.xyz/2019/03/22/如何启用 Shadowsocks 的多端口/">
+  <link rel="canonical" href="https://luzeyang.xyz/2019/04/01/绕过校园网认证/">
 
 
 
@@ -131,7 +141,7 @@
   };
 </script>
 
-  <title>如何启用 Shadowsocks 的多端口 | 路遥的博客</title>
+  <title>绕过校园网认证 | 路遥的博客</title>
   
 
 
@@ -424,7 +434,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://luzeyang.xyz/2019/03/22/如何启用 Shadowsocks 的多端口/">
+    <link itemprop="mainEntityOfPage" href="https://luzeyang.xyz/2019/04/01/绕过校园网认证/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LuYao">
@@ -441,7 +451,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何启用 Shadowsocks 的多端口
+          <h1 class="post-title" itemprop="name headline">绕过校园网认证
 
               
             
@@ -467,24 +477,12 @@
                 
               
 
-              <time title="创建时间：2019-03-22 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-22T00:00:00+08:00">2019-03-22</time>
+              <time title="创建时间：2019-04-01 00:00:00 / 修改时间：22:44:32" itemprop="dateCreated datePublished" datetime="2019-04-01T00:00:00+08:00">2019-04-01</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-23 13:52:54" itemprop="dateModified" datetime="2019-03-23T13:52:54+08:00">2019-03-23</time>
               
             
           </span>
@@ -501,7 +499,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/校园网/" itemprop="url" rel="index"><span itemprop="name">校园网</span></a></span>
 
                 
                 
@@ -536,35 +534,25 @@
       
 
       
-        <p>　　一键脚本默认只会开启单个端口以供使用。之所以这么做，是因为考虑到一般都是个人使用才会自己搭建属于自己的 Shadowsocks 服务端，所以在安装交互的时候，默认只要求输入某个端口即可。但如果你想要小范围内分享，那么你可能需要开启多个端口。<a id="more"></a><br>目前主流的四个版本实际上都是支持多端口的，只不过开启的方法不太一样，本文的重点就是写一下针对不同版本的 Shadowsocks 如何开启多端口。</p>
-<p>注意：本文是以四合一版的正确安装和使用为前提条件的。</p>
-<h1 id="一、Shadowsocks-Python"><a href="#一、Shadowsocks-Python" class="headerlink" title="一、Shadowsocks-Python"></a>一、Shadowsocks-Python</h1><p>Shadowsocks-Python 版的配置文件路径 /etc/shadowsocks-python/config.json，下面以修改该配置文件来说明。<br>在 Linux 下建议使用 vim 或者 nano 来编辑此配置文件。具体如何使用这两种编辑器，这里不多说明，可自行去搜索相关用法。<br>Shadowsocks-Python 版多端口配置文件示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</span><br><span class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</span><br><span class="line">    &quot;local_port&quot;:1080,</span><br><span class="line">    &quot;port_password&quot;:&#123;</span><br><span class="line">         &quot;9000&quot;:&quot;password0&quot;,</span><br><span class="line">         &quot;9001&quot;:&quot;password1&quot;,</span><br><span class="line">         &quot;9002&quot;:&quot;password2&quot;,</span><br><span class="line">         &quot;9003&quot;:&quot;password3&quot;,</span><br><span class="line">         &quot;9004&quot;:&quot;password4&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;timeout&quot;:300,</span><br><span class="line">    &quot;method&quot;:&quot;your_encryption_method&quot;,</span><br><span class="line">    &quot;fast_open&quot;: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>重点在于 port_password 字段的修改。<br>你想要多少端口就添加多少端口，注意需要符合 json 格式，里面的最后一行后面是没有英文逗号的，整个大括号的最后需要有一个英文逗号。<br>修改完成后，保存配置文件，重启之。命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks-python restart</span><br></pre></td></tr></table></figure></p>
-<h1 id="二、ShadowsocksR"><a href="#二、ShadowsocksR" class="headerlink" title="二、ShadowsocksR"></a>二、ShadowsocksR</h1><p>ShadowsocksR 版的配置文件路径 /etc/shadowsocks-r/config.json，下面以修改该配置文件来说明。<br>ShadowsocksR 版多端口配置文件示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</span><br><span class="line">    &quot;server_ipv6&quot;: &quot;[::]&quot;,</span><br><span class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</span><br><span class="line">    &quot;local_port&quot;:1080,</span><br><span class="line">    &quot;port_password&quot;:&#123;</span><br><span class="line">        &quot;9000&quot;:&quot;password0&quot;,</span><br><span class="line">        &quot;9001&quot;:&quot;password1&quot;,</span><br><span class="line">        &quot;9002&quot;:&quot;password2&quot;,</span><br><span class="line">        &quot;9003&quot;:&quot;password3&quot;,</span><br><span class="line">        &quot;9004&quot;:&quot;password4&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;timeout&quot;:300,</span><br><span class="line">    &quot;method&quot;:&quot;your_encryption_method&quot;,</span><br><span class="line">    &quot;protocol&quot;: &quot;your_protocol&quot;,</span><br><span class="line">    &quot;protocol_param&quot;: &quot;&quot;,</span><br><span class="line">    &quot;obfs&quot;: &quot;your_obfs&quot;,</span><br><span class="line">    &quot;obfs_param&quot;: &quot;&quot;,</span><br><span class="line">    &quot;redirect&quot;: &quot;&quot;,</span><br><span class="line">    &quot;dns_ipv6&quot;: false,</span><br><span class="line">    &quot;fast_open&quot;: false,</span><br><span class="line">    &quot;workers&quot;: 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>重点在于 port_password 字段的修改。<br>你想要多少端口就添加多少端口，注意需要符合 json 格式，里面的最后一行后面是没有英文逗号的，整个大括号的最后需要有一个英文逗号。<br>修改完成后，保存配置文件，重启之。命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks-r restart</span><br></pre></td></tr></table></figure></p>
-<h1 id="三、Shadowsocks-Go"><a href="#三、Shadowsocks-Go" class="headerlink" title="三、Shadowsocks-Go"></a>三、Shadowsocks-Go</h1><p>Shadowsocks-Go 版的配置文件路径 /etc/shadowsocks-go/config.json，下面以修改该配置文件来说明。<br>Shadowsocks-Go 版多端口配置文件示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;port_password&quot;:&#123;</span><br><span class="line">         &quot;9000&quot;:&quot;password0&quot;,</span><br><span class="line">         &quot;9001&quot;:&quot;password1&quot;,</span><br><span class="line">         &quot;9002&quot;:&quot;password2&quot;,</span><br><span class="line">         &quot;9003&quot;:&quot;password3&quot;,</span><br><span class="line">         &quot;9004&quot;:&quot;password4&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;method&quot;:&quot;your_encryption_method&quot;,</span><br><span class="line">    &quot;timeout&quot;:300</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>重点在于 port_password 字段的修改。<br>你想要多少端口就添加多少端口，注意需要符合 json 格式，里面的最后一行后面是没有英文逗号的，整个大括号的最后需要有一个英文逗号。<br>修改完成后，保存配置文件，重启之。命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks-go restart</span><br></pre></td></tr></table></figure></p>
-<h1 id="四、Shadowsocks-libev"><a href="#四、Shadowsocks-libev" class="headerlink" title="四、Shadowsocks-libev"></a>四、Shadowsocks-libev</h1><p>Shadowsocks-libev 版是唯一不能单纯靠修改配置文件来开启多端口的。<br>不过，开发者单独开发了一个 ss-manager 来管理和开启多端口，其工作原理大致如下：<br>调用 ss-server 并根据配置文件里的多个端口号，在当前用户目录下生成隐藏文件夹 .shadowsocks 以及拆分配置文件为 .shadowsocks_端口号.conf，并以此创建新的进程，再生成 .shadowsocks_端口号.pid 来保存进程的 pid 信息。<br>最终，创建出来的 ss-server 进程数和配置文件里的端口数相同。也就是说，每个端口需要开启一个 ss-server 进程。</p>
-<p>于是就简单写了一个用于 Shadowsocks-libev 版多用户管理 ss-manager 的启动脚本，可以通过编辑 json 配置文件 /etc/shadowsocks-manager/config.json 的形式，启动和停止多端口的 libev 版服务端。<br>下面说一下用法。</p>
-<p>1、下载该启动脚本并赋予执行权限。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/init.d/shadowsocks-manager https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-manager</span><br><span class="line">chmod 755 /etc/init.d/shadowsocks-manager</span><br></pre></td></tr></table></figure></p>
-<p>2、新建存放配置文件的目录<br>mkdir /etc/shadowsocks-manager<br>3、创建多端口配置文件，/etc/shadowsocks-manager/config.json 示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</span><br><span class="line">    &quot;port_password&quot;:&#123;</span><br><span class="line">         &quot;9000&quot;:&quot;password0&quot;,</span><br><span class="line">         &quot;9001&quot;:&quot;password1&quot;,</span><br><span class="line">         &quot;9002&quot;:&quot;password2&quot;,</span><br><span class="line">         &quot;9003&quot;:&quot;password3&quot;,</span><br><span class="line">         &quot;9004&quot;:&quot;password4&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;timeout&quot;:300,</span><br><span class="line">    &quot;user&quot;:&quot;nobody&quot;,</span><br><span class="line">    &quot;method&quot;:&quot;your_encryption_method&quot;,</span><br><span class="line">    &quot;nameserver&quot;:&quot;8.8.8.8&quot;,</span><br><span class="line">    &quot;mode&quot;:&quot;tcp_and_udp&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>关于配置文件，更多选项，请参考：<br><a href="https://github.com/shadowsocks/shadowsocks-libev/blob/master/doc/shadowsocks-libev.asciidoc" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks-libev/blob/master/doc/shadowsocks-libev.asciidoc</a></p>
-<p>4、使用启动脚本<br>启动：/etc/init.d/shadowsocks-manager start<br>停止：/etc/init.d/shadowsocks-manager stop<br>重启：/etc/init.d/shadowsocks-manager restart<br>查看状态：/etc/init.d/shadowsocks-manager status</p>
-<p>五、共通步骤<br>如果你是在 CentOS 系统里运行的，也许会需要将配置文件里对应的端口在防火墙里打开。<br>CentOS 6 一般是使用 iptables，先确认一下状态：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/iptables status</span><br></pre></td></tr></table></figure></p>
-<p>如果是处于运行中，那么打开新端口的命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 新端口号 -j ACCEPT</span><br><span class="line">iptables -I INPUT -m state --state NEW -m udp -p udp --dport 新端口号 -j ACCEPT</span><br></pre></td></tr></table></figure></p>
-<p>保存并重启 iptables，命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/iptables save</span><br><span class="line">/etc/init.d/iptables restart</span><br></pre></td></tr></table></figure></p>
-<p>显示 iptables 一览，并确认端口是否添加成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -L -n</span><br></pre></td></tr></table></figure></p>
-<p>CentOS 7 一般是使用 firewalld，先确认一下状态：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure></p>
-<p>如果是处于运行中，那么打开新端口的命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=public --add-port=新端口号/tcp</span><br><span class="line">firewall-cmd --permanent --zone=public --add-port=新端口号/udp</span><br></pre></td></tr></table></figure></p>
-<p>重新加载 firewalld，命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure></p>
-<p>显示 firewall 一览，并确认端口是否添加成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure></p>
-<p>Debian 或 Ubuntu 默认一般是不开启防火墙的，当然也有可能出现特殊情况已经开启了，那么同样需要将配置文件里对应的端口在防火墙里打开。<br>当然，如果你嫌麻烦，那么可以直接将防火墙关闭。<br>iptables 的关闭方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/iptables stop</span><br></pre></td></tr></table></figure></p>
-<p>关闭开机自启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig iptables off</span><br></pre></td></tr></table></figure></p>
-<p>firewalld 的关闭方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure></p>
-<p>关闭开机自启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld</span><br></pre></td></tr></table></figure></p>
-<p>另外，如果你使用的是大公司的 Cloud 产品，比如 AWS，Google Cloud，Azure，阿里云等等，也许还需要在后台的控制面板里将对应的通信端口打开。这里就不多说明了，每家的方法大同小异。</p>
-<hr>
-<p>转载自<a href="https://teddysun.com/" target="_blank" rel="noopener">秋水逸冰</a>，感谢秋大的脚本，访问原帖请挂梯进入。</p>
+        <p>　　大概一个月前阿里云活动，通过学生认证的购买服务器有很大的优惠，就买了三个月的上海的服务器，本想建站呢，无奈备案过程太过复杂繁琐，就扔在一边不管了，这个月校园网到期了，平常又不怎么用，流量又用不完，所以就没续费，突然有个想法，绕过校园网认证上网。<br>　　我们连接校园网，提示需要登录。<br><img src="https://i.loli.net/2019/04/01/5ca1b8aae0e7f.jpg" alt="Screenshot_20190401-143631.jpg"><br>　　我们到终端ping一下ip地址:115.239.210.27，此时是ping不通的，显然这是一个内网，通过这个内网登录到公网，经过认证成功后才能上网。<br><img src="https://i.loli.net/2019/04/01/5ca1b8df36efb.jpg" alt="Screenshot_20190401-143622.jpg"></p>
+<p>所以整个认证过程是：</p>
+<h3 id="内网登录——公网认证——正常上网"><a href="#内网登录——公网认证——正常上网" class="headerlink" title="内网登录——公网认证——正常上网"></a>内网登录——公网认证——正常上网</h3><p>绕过过程是：</p>
+<h3 id="内网（不登陆）——绕过学校公网——连接服务器——正常上网"><a href="#内网（不登陆）——绕过学校公网——连接服务器——正常上网" class="headerlink" title="内网（不登陆）——绕过学校公网——连接服务器——正常上网"></a>内网（不登陆）——绕过学校公网——连接服务器——正常上网</h3><p>　　那么怎样绕过呢？答案就是依赖端口通过UDP转发。重要的端口有三个，53，67，68。</p>
+<p>53端口:53端口为DNS(Domain Name Server,域名服务器)服务器所开放,主要用于域名解析,DNS 服务在NT系统中使用的最为广泛。</p>
+<p>67、68端口:67、68端口分别是为Bootp服务的Bootstrap Protocol Server(引导程序协议服务端)和Bootstrap Protocol Client(引导程序协议客户端)开放的端口。</p>
+<p>　　SSR只可惜不代理UDP，只代理TCP，所以我们还是需要用OpenVPN，另一款优秀的代理软件。</p>
+<p>　　搭建过程就不说了，和SSR搭建过程差不多，这里贴上脚本，按照提示一步步输入并回车就行了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://down.cangshui.net/-mysh/FAS/fas.sh &amp;&amp; chmod +x fas.sh &amp;&amp; bash fas.sh</span><br></pre></td></tr></table></figure></p>
+<p>搭建完复制下来所有的输出提示备用。<br>管理指令:<br>重启VPN：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vpn restart</span><br></pre></td></tr></table></figure></p>
+<p>FAS后台开启：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onfas</span><br></pre></td></tr></table></figure></p>
+<p>启动VPN：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vpn start</span><br></pre></td></tr></table></figure></p>
+<p>FAS后台关闭：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unfas</span><br></pre></td></tr></table></figure></p>
+<p>停止VPN：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vpn stop</span><br></pre></td></tr></table></figure></p>
+<p>数据库开启：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onsql</span><br></pre></td></tr></table></figure></p>
+<p>开任意端口：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">port</span><br></pre></td></tr></table></figure></p>
+<p>数据库关闭：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unsql</span><br></pre></td></tr></table></figure></p>
+<p>　　后台登录，打开线路管理——分类管理，分类名称命名“校园网”，其它也可以，随意，容易辩识就可以<br><img src="https://i.loli.net/2019/04/01/5ca213e31c3bf.jpg" alt="Screenshot_20190401-212857.jpg"><br>　　线路管理——新增线路，按照要求填写即可，注意：[domain] 会替换成你的IP或者域名。<br><img src="https://i.loli.net/2019/04/01/5ca21c1e5d15b.jpg" alt="Screenshot_20190401-213809.jpg"><br>　　打开juiceSSH，输入port，分别选择1，2，并放行53，68端口，也就是53，68的TCP，DUP都要放行。<br><img src="https://i.loli.net/2019/04/01/5ca21c5fc21f6.jpg" alt="Screenshot_20190401-195757.jpg"><br><img src="https://i.loli.net/2019/04/01/5ca215c02b624.jpg" alt="Screenshot_20190401-195625.jpg"><br>　　这里我只截图了放行UDP的，TCP也放行吧，哪个端口能用，取决于学校，一般是53，67，68。我们学校是68，这个自己测试。</p>
+<p>　　打开软件，登录你的账号密码（可后台添加和自行注册），选择线路并安装，再链接校园网，点击连接就可以了</p>
+<p>　　测一下速度，下载速度0.64M/s，我的服务器只有5Mbps，可以满速，实际使用中网速超过1M/s也是可能的<br><img src="https://i.loli.net/2019/04/01/5ca21c8f70f7d.jpg" alt="Screenshot_20190401-214941.jpg"><br><img src="https://i.loli.net/2019/04/01/5ca217cef1f8b.jpg" alt="Screenshot_20190401-215148.jpg"><br>　　最后放上我用平板测试的截图，B站，未登陆校园网，1080P可以看<br><img src="https://i.loli.net/2019/04/01/5ca21da4df81c.png" alt="7ffa93fa4e5971cf.png"></p>
 
       
     </div>
@@ -617,9 +605,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SSR/" rel="tag"><i class="fa fa-tag"></i> SSR</a>
+            <a href="/tags/OpenVPN/" rel="tag"><i class="fa fa-tag"></i> OpenVPN</a>
           
-            <a href="/tags/SSR多端口/" rel="tag"><i class="fa fa-tag"></i> SSR多端口</a>
+            <a href="/tags/UDP/" rel="tag"><i class="fa fa-tag"></i> UDP</a>
           
         </div>
       
@@ -632,8 +620,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/21/Shadowsocks 一键安装脚本（四合一）/" rel="next" title="Shadowsocks 一键安装脚本（四合一）">
-                <i class="fa fa-chevron-left"></i> Shadowsocks 一键安装脚本（四合一）
+              <a href="/2019/03/26/记一次手机系统更新/" rel="next" title="记一次手机系统更新（官方RE，保留root）">
+                <i class="fa fa-chevron-left"></i> 记一次手机系统更新（官方RE，保留root）
               </a>
             
           </div>
@@ -641,10 +629,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/26/记一次手机系统更新/" rel="prev" title="记一次手机系统更新（官方RE，保留root）">
-                记一次手机系统更新（官方RE，保留root） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -828,7 +812,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Shadowsocks-Python"><span class="nav-number">1.</span> <span class="nav-text">一、Shadowsocks-Python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、ShadowsocksR"><span class="nav-number">2.</span> <span class="nav-text">二、ShadowsocksR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Shadowsocks-Go"><span class="nav-number">3.</span> <span class="nav-text">三、Shadowsocks-Go</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、Shadowsocks-libev"><span class="nav-number">4.</span> <span class="nav-text">四、Shadowsocks-libev</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内网登录——公网认证——正常上网"><span class="nav-number">1.</span> <span class="nav-text">内网登录——公网认证——正常上网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内网（不登陆）——绕过学校公网——连接服务器——正常上网"><span class="nav-number">2.</span> <span class="nav-text">内网（不登陆）——绕过学校公网——连接服务器——正常上网</span></a></li></ol></div>
             
 
           </div>
@@ -1010,7 +994,7 @@ setInterval("createtime()",250);
   
     <script>
   window.livereOptions = {
-    refer: '2019/03/22/如何启用 Shadowsocks 的多端口/'
+    refer: '2019/04/01/绕过校园网认证/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
