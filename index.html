@@ -468,12 +468,24 @@
                 
               
 
-              <time title="创建时间：2019-04-01 00:00:00 / 修改时间：22:49:33" itemprop="dateCreated datePublished" datetime="2019-04-01T00:00:00+08:00">2019-04-01</time>
+              <time title="创建时间：2019-04-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-01T00:00:00+08:00">2019-04-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-02 10:36:16" itemprop="dateModified" datetime="2019-04-02T10:36:16+08:00">2019-04-02</time>
               
             
           </span>
@@ -526,19 +538,37 @@
 
       
         
-          <p>　　大概一个月前阿里云活动，通过学生认证的购买服务器有很大的优惠，就买了三个月的上海的服务器，本想建站呢，无奈备案过程太过复杂繁琐，就扔在一边不管了，这个月校园网到期了，平常又不怎么用，流量又用不完，所以就没续费，突然有个想法，绕过校园网认证上网。
-          <!--noindex-->
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/01/绕过校园网认证/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
+            <p>　　大概一个月前阿里云活动，通过学生认证的购买服务器有很大的优惠，我就买了三个月的上海的服务器，本想建站呢，无奈备案过程太过复杂繁琐，就扔在一边不管了，这个月校园网到期了，平常又不怎么用，流量又用不完，所以就没续费，突然有个想法，绕过校园网认证上网。<br>　　我们连接校园网，提示需要登录。<br><img src="https://i.loli.net/2019/04/01/5ca1b8aae0e7f.jpg" alt="Screenshot_20190401-143631.jpg"><br>　　我们到终端ping一下ip地址:115.239.210.27，此时是ping不通的，显然这是一个内网，通过这个内网登录到公网，经过认证成功后才能上网。<br><img src="https://i.loli.net/2019/04/01/5ca1b8df36efb.jpg" alt="Screenshot_20190401-143622.jpg"></p>
+<p>所以整个认证过程是：</p>
+<h3 id="内网登录——公网认证——正常上网"><a href="#内网登录——公网认证——正常上网" class="headerlink" title="内网登录——公网认证——正常上网"></a>内网登录——公网认证——正常上网</h3><p>绕过过程是：</p>
+<h3 id="内网（不登陆）——绕过学校公网——连接服务器——正常上网"><a href="#内网（不登陆）——绕过学校公网——连接服务器——正常上网" class="headerlink" title="内网（不登陆）——绕过学校公网——连接服务器——正常上网"></a>内网（不登陆）——绕过学校公网——连接服务器——正常上网</h3><p>　　大概就是这样<br><img src="https://i.loli.net/2019/04/02/5ca2c91de093a.jpg" alt="IMG_20190401_210247__01.jpg"></p>
+<p>　　那么怎样绕过呢？答案就是依赖端口通过UDP转发。重要的端口有三个，53，67，68。</p>
+<p>53端口:53端口为DNS(Domain Name Server,域名服务器)服务器所开放,主要用于域名解析,DNS 服务在NT系统中使用的最为广泛。</p>
+<p>67、68端口:67、68端口分别是为Bootp服务的Bootstrap Protocol Server(引导程序协议服务端)和Bootstrap Protocol Client(引导程序协议客户端)开放的端口。</p>
+<p>　　SSR只可惜不代理UDP，只代理TCP，所以我们还是需要用OpenVPN，另一款优秀的代理软件。</p>
+<p>　　搭建过程就不说了，和SSR搭建过程差不多，这里贴上脚本，按照提示一步步输入并回车就行了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://down.cangshui.net/-mysh/FAS/fas.sh &amp;&amp; chmod +x fas.sh &amp;&amp; bash fas.sh</span><br></pre></td></tr></table></figure></p>
+<p>搭建完复制下来所有的输出提示备用。<br>管理指令:<br>重启VPN：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vpn restart</span><br></pre></td></tr></table></figure></p>
+<p>FAS后台开启：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onfas</span><br></pre></td></tr></table></figure></p>
+<p>启动VPN：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vpn start</span><br></pre></td></tr></table></figure></p>
+<p>FAS后台关闭：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unfas</span><br></pre></td></tr></table></figure></p>
+<p>停止VPN：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vpn stop</span><br></pre></td></tr></table></figure></p>
+<p>数据库开启：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onsql</span><br></pre></td></tr></table></figure></p>
+<p>开任意端口：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">port</span><br></pre></td></tr></table></figure></p>
+<p>数据库关闭：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unsql</span><br></pre></td></tr></table></figure></p>
+<p>　　后台登录，打开线路管理——分类管理，分类名称命名“校园网”，其它也可以，随意，容易辩识就可以<br><img src="https://i.loli.net/2019/04/01/5ca213e31c3bf.jpg" alt="Screenshot_20190401-212857.jpg"></p>
+<p>　　线路管理——新增线路，按照要求填写即可，注意：[domain] 会替换成你的IP或者域名，[port] 需要修改成你用的端口。</p>
+<p><img src="https://i.loli.net/2019/04/01/5ca21c1e5d15b.jpg" alt="Screenshot_20190401-213809.jpg"></p>
+<p>　　线路内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">client</span><br><span class="line">dev tun</span><br><span class="line">proto udp</span><br><span class="line">remote [domain] [port]</span><br><span class="line">resolv-retry infinite</span><br><span class="line">nobind</span><br><span class="line">persist-key</span><br><span class="line">persist-tun</span><br><span class="line">auth-user-pass</span><br><span class="line">ns-cert-type server</span><br><span class="line">comp-lzo</span><br><span class="line">verb 3</span><br><span class="line">## 证书</span><br><span class="line">&lt;ca&gt;</span><br><span class="line">-----BEGIN CERTIFICATE-----</span><br><span class="line">MIIE7jCCA9agAwIBAgIJAJLzuFmEowyMMA0GCSqGSIb3DQEBCwUAMIGqMQswCQYD</span><br><span class="line">VQQGEwJDTjELMAkGA1UECBMCQ0ExFTATBgNVBAcTDFNhbkZyYW5jaXNjbzEVMBMG</span><br><span class="line">A1UEChMMRm9ydC1GdW5zdG9uMRUwEwYDVQQLEwx3d3cuZGluZ2QuY24xGDAWBgNV</span><br><span class="line">BAMTD0ZvcnQtRnVuc3RvbiBDQTEQMA4GA1UEKRMHRWFzeVJTQTEdMBsGCSqGSIb3</span><br><span class="line">DQEJARYOYWRtaW5AZGluZ2QuY24wHhcNMTcwMjIxMDMzNzE4WhcNMjcwMjE5MDMz</span><br><span class="line">NzE4WjCBqjELMAkGA1UEBhMCQ04xCzAJBgNVBAgTAkNBMRUwEwYDVQQHEwxTYW5G</span><br><span class="line">cmFuY2lzY28xFTATBgNVBAoTDEZvcnQtRnVuc3RvbjEVMBMGA1UECxMMd3d3LmRp</span><br><span class="line">bmdkLmNuMRgwFgYDVQQDEw9Gb3J0LUZ1bnN0b24gQ0ExEDAOBgNVBCkTB0Vhc3lS</span><br><span class="line">U0ExHTAbBgkqhkiG9w0BCQEWDmFkbWluQGRpbmdkLmNuMIIBIjANBgkqhkiG9w0B</span><br><span class="line">AQEFAAOCAQ8AMIIBCgKCAQEAxShPTu6oTmHqm1pvvn/qayZ8YF26AFEct1BP8wFB</span><br><span class="line">IPTNxHP66c5jIqOEZjcaMwiKlngfP+cS3A8t47cW8ZZqcDguSOSiiOag+zy2iTH5</span><br><span class="line">HxyHaYiI2pAp55rYlx3QOXwryrBic06edD7JSGNYeXn7kOO8ViJoclOTSCCQTTJB</span><br><span class="line">vqNhifIy35qxcueD075Rz//dAJUhr+QX9ixtK815aSeH2+NyqYwYha3l6Z7KtFgb</span><br><span class="line">8veKdY9TAA4pjVX9I2iVpn+ezQPDxdBDHN4Bc8MmuIErEzVOIUxK3TzXxkSyuCSK</span><br><span class="line">pvDFNKEITcIo2AZiPyw9OxYzfSbT3ilAzoKyEFg/WCXlxwIDAQABo4IBEzCCAQ8w</span><br><span class="line">HQYDVR0OBBYEFCBcOM8ljbd8B+J6Xjwj13iK7fBxMIHfBgNVHSMEgdcwgdSAFCBc</span><br><span class="line">OM8ljbd8B+J6Xjwj13iK7fBxoYGwpIGtMIGqMQswCQYDVQQGEwJDTjELMAkGA1UE</span><br><span class="line">CBMCQ0ExFTATBgNVBAcTDFNhbkZyYW5jaXNjbzEVMBMGA1UEChMMRm9ydC1GdW5z</span><br><span class="line">dG9uMRUwEwYDVQQLEwx3d3cuZGluZ2QuY24xGDAWBgNVBAMTD0ZvcnQtRnVuc3Rv</span><br><span class="line">biBDQTEQMA4GA1UEKRMHRWFzeVJTQTEdMBsGCSqGSIb3DQEJARYOYWRtaW5AZGlu</span><br><span class="line">Z2QuY26CCQCS87hZhKMMjDAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IB</span><br><span class="line">AQBwZvIQU4d7XD1dySjCHej+i5QhK1y2BTrmYSemLnMQp9PT/wQ7bwzZjoO9jTeJ</span><br><span class="line">x2sMfhp0EVQCZvBFGqArNu1Ysh00mMQfWWb8K3LWbmThEkNpwoGniHBgDkPJOITM</span><br><span class="line">rA2HSIh53mkQt5u9H4/vmVWElhGakgEzgfNrzxj6goX5klXxRL/JqAjAJhjS06sS</span><br><span class="line">JPNVSZv0tdE+XaO02sPjK7/KWbwAGf4mO2v71Q+oYJdoRmAcge+gbBMg2s6rPCfv</span><br><span class="line">Bp2g84FhG04f5KyJIVzzQ+0sCx94XE7P5HN/zjO+3QPDd7dxGZ6ia1Z5nnSRSJVa</span><br><span class="line">yBNWh3h8PAaAQQi7qkuJB+iF</span><br><span class="line">-----END CERTIFICATE-----</span><br><span class="line"></span><br><span class="line">&lt;/ca&gt;</span><br><span class="line">key-direction 1</span><br><span class="line">&lt;tls-auth&gt;</span><br><span class="line">#</span><br><span class="line"># 2048 bit OpenVPN static key</span><br><span class="line">#</span><br><span class="line">-----BEGIN OpenVPN Static key V1-----</span><br><span class="line">07a0c4fdc79e45b6d7d69abee82a3dca</span><br><span class="line">7026125b063bb19d79ff443ec144dfcd</span><br><span class="line">6df565ad2449cb928a89f2959e32305e</span><br><span class="line">86cc150c1c6e1d24e25bbdbd716b0b34</span><br><span class="line">ce5d92f5c8133812759ca8b10295d624</span><br><span class="line">5e6659dafbbe31fd20971b3287fc3762</span><br><span class="line">555cc9cd10eaf1b2570339295ded9e61</span><br><span class="line">cbce6d29bd8e5c7d4aea86027beb8d3c</span><br><span class="line">323a5dc803ef5d574b8d5c08a981ca8d</span><br><span class="line">3754d34a7d60896b295823cde4bb6ab7</span><br><span class="line">57757ab750b06352b7a218d6814ae433</span><br><span class="line">4a6b1570cb680cd854aad74196cda45b</span><br><span class="line">b69acb97de87f1ec6cc01a2034bd7e8c</span><br><span class="line">3e0ffea1cccf722716bcf387e56baf04</span><br><span class="line">369dde778a5544ada640c15c65ec5389</span><br><span class="line">2ba0834a78302fab9b214bfc3dddd80e</span><br><span class="line">-----END OpenVPN Static key V1-----</span><br><span class="line"></span><br><span class="line">&lt;/tls-auth&gt;</span><br></pre></td></tr></table></figure>
+<p>　　打开juiceSSH，输入port，分别选择1，2，并放行53，68端口，也就是53，68的TCP，DUP都要放行。<br><img src="https://i.loli.net/2019/04/01/5ca21c5fc21f6.jpg" alt="Screenshot_20190401-195757.jpg"><br><img src="https://i.loli.net/2019/04/01/5ca215c02b624.jpg" alt="Screenshot_20190401-195625.jpg"><br>　　这里我只截图了放行UDP的，TCP也放行吧，哪个端口能用，取决于学校，一般是53，67，68。我们学校是68，这个自己测试。</p>
+<p>　　打开软件，登录你的账号密码（可后台添加和自行注册），选择线路并安装，再链接校园网，点击连接就可以了</p>
+<p>　　测一下速度，下载速度0.64M/s，我的服务器只有5Mbps，可以满速，实际使用中网速超过1M/s也是可能的<br><img src="https://i.loli.net/2019/04/01/5ca21c8f70f7d.jpg" alt="Screenshot_20190401-214941.jpg"><br><img src="https://i.loli.net/2019/04/01/5ca217cef1f8b.jpg" alt="Screenshot_20190401-215148.jpg"><br>　　最后放上我用平板测试的截图，B站，未登陆校园网，1080P可以看<br><img src="https://i.loli.net/2019/04/01/5ca21da4df81c.png" alt="7ffa93fa4e5971cf.png"></p>
+
           
-          <!--/noindex-->
         
       
-    </p></div>
+    </div>
 
     
 
@@ -937,173 +967,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://luzeyang.xyz/2019/03/21/Shadowsocks 一键安装脚本（四合一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LuYao">
-      <meta itemprop="description" content="描述">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="路遥的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/21/Shadowsocks 一键安装脚本（四合一）/" class="post-title-link" itemprop="url">Shadowsocks 一键安装脚本（四合一）</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-21 00:00:00 / 修改时间：21:28:30" itemprop="dateCreated datePublished" datetime="2019-03-21T00:00:00+08:00">2019-03-21</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="本脚本适用环境"><a href="#本脚本适用环境" class="headerlink" title="本脚本适用环境"></a>本脚本适用环境</h1><p>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+<br>内存要求：≥128M<br>日期　　：2019 年 01 月 11 日<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/21/Shadowsocks 一键安装脚本（四合一）/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://luzeyang.xyz/2019/03/21/一键安装最新内核并开启 BBR 脚本/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1212,6 +1075,173 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/2019/03/21/一键安装最新内核并开启 BBR 脚本/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://luzeyang.xyz/2019/03/21/Shadowsocks 一键安装脚本（四合一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LuYao">
+      <meta itemprop="description" content="描述">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="路遥的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/21/Shadowsocks 一键安装脚本（四合一）/" class="post-title-link" itemprop="url">Shadowsocks 一键安装脚本（四合一）</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-21 00:00:00 / 修改时间：21:28:30" itemprop="dateCreated datePublished" datetime="2019-03-21T00:00:00+08:00">2019-03-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="本脚本适用环境"><a href="#本脚本适用环境" class="headerlink" title="本脚本适用环境"></a>本脚本适用环境</h1><p>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+<br>内存要求：≥128M<br>日期　　：2019 年 01 月 11 日<br>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/21/Shadowsocks 一键安装脚本（四合一）/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
