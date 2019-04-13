@@ -119,8 +119,9 @@
 <meta property="og:image" content="https://i.loli.net/2019/04/11/5cae9ac03f708.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/04/11/5cae9c03bc89a.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/04/11/5cae9c33efada.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/13/5cb1b08781346.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/04/11/5cae9c6355e99.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/04/11/5cae9c6355e99.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/04/13/5cb1b0c18acb0.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/04/11/5cae9e1861bbe.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/04/11/5cae9ea6bf769.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/04/13/5cb19fffd76d6.jpg">
@@ -131,7 +132,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/04/13/5cb1a09d64a26.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/04/13/5cb1a0b5923a9.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/04/13/5cb1a11cabcc0.jpg">
-<meta property="og:updated_time" content="2019-04-13T09:41:35.555Z">
+<meta property="og:updated_time" content="2019-04-13T09:54:23.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="酷我音乐破解教程">
 <meta name="twitter:description" content="酷我音乐也算是比较良心的音乐软件了，大概两年前我就出过相关的视频破解教程，教程比较早了，层次也比较低，如今酷我音乐仍然没有采取任何防破解措施。所以就写了新版的破解图文教程，有兴趣的可以看看。">
@@ -488,7 +489,7 @@
                 
               
 
-              <time title="创建时间：2019-04-13 00:00:00 / 修改时间：17:41:35" itemprop="dateCreated datePublished" datetime="2019-04-13T00:00:00+08:00">2019-04-13</time>
+              <time title="创建时间：2019-04-13 00:00:00 / 修改时间：17:54:23" itemprop="dateCreated datePublished" datetime="2019-04-13T00:00:00+08:00">2019-04-13</time>
             
 
             
@@ -567,11 +568,13 @@
 <p>删除后如图</p>
 <p><img src="https://i.loli.net/2019/04/11/5cae9c33efada.jpg" alt="Screenshot_20190411-091021.jpg"></p>
 <p>下一个hasBought同上，修改如下图</p>
-<p><img src="https://i.loli.net/2019/04/11/5cae9c6355e99.jpg" alt="Screenshot_20190411-091318.jpg"></p>
+<p><img src="https://i.loli.net/2019/04/13/5cb1b08781346.jpg" alt="Screenshot_20190411-091341__01.jpg"></p>
 <p>修改完右上角保存就可以了</p>
 <p><img src="https://i.loli.net/2019/04/11/5cae9c6355e99.jpg" alt="Screenshot_20190411-091318.jpg"></p>
 <p>至此，歌曲就可以直接下载了，但是VIP功能还不能用，接下来修改本地VIP。</p>
-<h1 id="②修改VIP标识和VIP可用功能"><a href="#②修改VIP标识和VIP可用功能" class="headerlink" title="②修改VIP标识和VIP可用功能"></a>②修改VIP标识和VIP可用功能</h1><p>还是用dex++，还是classes.dex，依次找到：cn/kuwo/mod/vipreal/VipRealInfo<br>这里注意一下，不同版本的路径不一样，我记得之前的版本是<br>在classes2.dex的，所以最好手动找一下。<br>点击右上角小导航，找到getState，这个就是获取VIP身份状态，我们给他强制赋值，添加</p>
+<h1 id="②修改VIP标识和VIP可用功能"><a href="#②修改VIP标识和VIP可用功能" class="headerlink" title="②修改VIP标识和VIP可用功能"></a>②修改VIP标识和VIP可用功能</h1><p>还是用dex++，还是classes.dex，依次找到：cn/kuwo/mod/vipreal/VipRealInfo<br>这里注意一下，不同版本的路径不一样，我记得之前的版本是<br>在classes2.dex的，所以最好手动找一下。<br>点击右上角小导航，找到getState和getLeftDays</p>
+<p><img src="https://i.loli.net/2019/04/13/5cb1b0c18acb0.jpg" alt="Screenshot_20190411-091838.jpg"></p>
+<p>getState就是获取VIP身份状态，我们给他强制赋值，添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const v0, 0x1</span><br></pre></td></tr></table></figure>
 <p><img src="https://i.loli.net/2019/04/11/5cae9e1861bbe.jpg" alt="Screenshot_20190411-092118.jpg"></p>
 <p>此时已经是本地VIP了，不过只是到期了，所以我们还要给getLeftDays添加赋值，这个就是获取VIP到期剩余天数，如图，添加</p>
