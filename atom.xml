@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luzeyang.fun/"/>
-  <updated>2019-09-09T12:17:56.730Z</updated>
+  <updated>2019-09-09T17:25:43.418Z</updated>
   <id>http://luzeyang.fun/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://luzeyang.fun/2019/09/10/WindowsStore_LTSC%202019/"/>
+    <id>http://luzeyang.fun/2019/09/10/WindowsStore_LTSC 2019/</id>
+    <published>2019-09-09T17:25:57.478Z</published>
+    <updated>2019-09-09T17:25:43.418Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　Win10 TLSB属于Win10企业版，LTSB就是长期支持更新分支（Long Time Service Branch），这个版本专门给一些企业用户的，相比一般版本会缺少很多新功能，例如没有应用商店、没有Edge浏览器，没有cortana，大家可以把Win10 TLSB看成是Windows10企业版的精简版本。
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>office2016和visio同时安装</title>
@@ -34,6 +51,27 @@
     
     
       <category term="电脑技巧" scheme="http://luzeyang.fun/tags/%E7%94%B5%E8%84%91%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HWID数字许可激活工具</title>
+    <link href="http://luzeyang.fun/2019/06/08/HWID%E6%95%B0%E5%AD%97%E8%AE%B8%E5%8F%AF%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7/"/>
+    <id>http://luzeyang.fun/2019/06/08/HWID数字许可激活工具/</id>
+    <published>2019-06-07T16:00:00.000Z</published>
+    <updated>2019-09-09T17:25:32.798Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　微软在2014年4月8日停止了xp系统的维护和更新，大部分用户都转战的win7，一晃十年过去了，win7用户占据了绝大部分，如今官网发布了公告：历经 10 年，对 Windows 7 的支持已近尾声 — 2020 年 1 月 14 日。我们了解，改变可能会很困难，因此，我们会为你提供有关后续行动的建议，并回答有关停止支持的问题。
+    
+    </summary>
+    
+    
+    
+      <category term="电脑软件" scheme="http://luzeyang.fun/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"/>
+    
+      <category term="实用工具" scheme="http://luzeyang.fun/tags/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
