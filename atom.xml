@@ -103,27 +103,6 @@
   </entry>
   
   <entry>
-    <title>一键安装最新内核并开启 BBR 脚本</title>
-    <link href="http://luzeyang.fun/2019/03/21/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E5%86%85%E6%A0%B8%E5%B9%B6%E5%BC%80%E5%90%AF%20BBR%20%E8%84%9A%E6%9C%AC/"/>
-    <id>http://luzeyang.fun/2019/03/21/一键安装最新内核并开启 BBR 脚本/</id>
-    <published>2019-03-20T16:00:00.000Z</published>
-    <updated>2019-03-21T13:28:40.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;　　最近，Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上了该算法。根据以往的传统，Google 总是先在自家的生产环境上线运用后，才会将代码开源，此次也不例外。&lt;br&gt;根据实地测试，在部署了最新版内核并开启了 TCP BBR 的机器上，网速甚至可以提升好几个数量级。&lt;br&gt;于是我根据目前三大发行版的最新内核，开发了一键安装最新内核并开启 TCP BBR 脚本。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Markdown" scheme="http://luzeyang.fun/categories/Markdown/"/>
-    
-    
-      <category term="BBR" scheme="http://luzeyang.fun/tags/BBR/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Shadowsocks 一键安装脚本（四合一）</title>
     <link href="http://luzeyang.fun/2019/03/21/Shadowsocks%20%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC%EF%BC%88%E5%9B%9B%E5%90%88%E4%B8%80%EF%BC%89/"/>
     <id>http://luzeyang.fun/2019/03/21/Shadowsocks 一键安装脚本（四合一）/</id>
@@ -143,6 +122,27 @@
       <category term="SSR" scheme="http://luzeyang.fun/tags/SSR/"/>
     
       <category term="教程" scheme="http://luzeyang.fun/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一键安装最新内核并开启 BBR 脚本</title>
+    <link href="http://luzeyang.fun/2019/03/21/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E5%86%85%E6%A0%B8%E5%B9%B6%E5%BC%80%E5%90%AF%20BBR%20%E8%84%9A%E6%9C%AC/"/>
+    <id>http://luzeyang.fun/2019/03/21/一键安装最新内核并开启 BBR 脚本/</id>
+    <published>2019-03-20T16:00:00.000Z</published>
+    <updated>2019-03-21T13:28:40.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　最近，Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上了该算法。根据以往的传统，Google 总是先在自家的生产环境上线运用后，才会将代码开源，此次也不例外。&lt;br&gt;根据实地测试，在部署了最新版内核并开启了 TCP BBR 的机器上，网速甚至可以提升好几个数量级。&lt;br&gt;于是我根据目前三大发行版的最新内核，开发了一键安装最新内核并开启 TCP BBR 脚本。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Markdown" scheme="http://luzeyang.fun/categories/Markdown/"/>
+    
+    
+      <category term="BBR" scheme="http://luzeyang.fun/tags/BBR/"/>
     
   </entry>
   
